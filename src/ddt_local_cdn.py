@@ -19,6 +19,7 @@ MIME_TYPES = {
     '.swf': 'application/x-shockwave-flash',
     '.xml': 'text/xml; charset=utf-8',
     '.ashx': 'text/xml; charset=utf-8',
+    '.aspx': 'text/xml; charset=utf-8',
     '.html': 'text/html; charset=utf-8',
     '.htm': 'text/html; charset=utf-8',
     '.js': 'application/javascript; charset=utf-8',
@@ -39,7 +40,6 @@ def get_tailscale_ip():
         out = subprocess.check_output(['tailscale', 'ip', '-4'], stderr=subprocess.DEVNULL)
         return out.decode().strip()
     except Exception:
-        # Fallback check through interfaces
         try:
             for info in socket.getaddrinfo(socket.gethostname(), None):
                 ip = info[4][0]
@@ -68,6 +68,17 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
             return MIME_TYPES[ext]
         return super().guess_type(path)
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.end_headers()
+
+    def do_POST(self):
+        # Read and discard payload for ASP.NET / Flash requests
+        content_length = int(self.headers.get('Content-Length', 0))
+        if content_length > 0:
+            _ = self.rfile.read(content_length)
+        return self.do_GET()
+
     def do_GET(self):
         # Handle IP API endpoint
         if self.path.startswith('/api/ip'):
@@ -87,6 +98,14 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
         if self.path in ('/', '/index.html'):
             self.path = '/player.html'
 
+        # Route LoginSelectList
+        if 'loginselectlist' in self.path.lower():
+            self.path = '/request/LoginSelectList.ashx'
+
+        # Route CreateLogin
+        if 'createlogin' in self.path.lower():
+            self.path = '/request/CreateLogin.ashx'
+
         # Fallback for /LoadServerList.ashx or ServerList.ashx
         if 'serverlist' in self.path.lower():
             self.path = '/request/ServerList.xml'
@@ -95,8 +114,8 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
         clean_path = self.path.split('?')[0].split('#')[0]
         local_file = os.path.normpath(os.path.join(WWW_DIR, clean_path.lstrip('/')))
 
-        # If file does not exist, but is an XML or ASHX request, serve dynamic success XML
-        if not os.path.exists(local_file) and (clean_path.endswith('.xml') or clean_path.endswith('.ashx')):
+        # If file does not exist, but is an XML, ASHX or ASPX request, serve dynamic success XML
+        if not os.path.exists(local_file) and (clean_path.endswith('.xml') or clean_path.endswith('.ashx') or clean_path.endswith('.aspx')):
             self.send_response(200)
             self.send_header('Content-Type', 'text/xml; charset=utf-8')
             self.end_headers()

@@ -17,9 +17,8 @@
         #flashContent {
             width: 1000px;
             height: 600px;
-            background: #0f172a;
+            background: #000000;
             position: relative;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
         embed, object {
             width: 100%;
@@ -31,17 +30,27 @@
 </head>
 <body>
     <div id="flashContent">
-        <embed 
-            src="/flash/Loading.swf" 
-            width="1000" 
-            height="600" 
-            quality="high" 
-            bgcolor="#000000" 
-            allowScriptAccess="always" 
-            allowFullScreen="true" 
-            type="application/x-shockwave-flash" 
-            pluginspage="http://www.macromedia.com/go/getflashplayer" 
-            flashvars="user=Admin&amp;key=master_token&amp;v=205&amp;rand=998877&amp;config=http://127.0.0.1:8080/config.xml&amp;site=http://127.0.0.1:8080/">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="1000" height="600" id="DDTank">
+            <param name="movie" value="/flash/Loading.swf" />
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#000000" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="allowFullScreen" value="true" />
+            <param name="wmode" value="direct" />
+            <param name="flashvars" value="user=Admin&username=Admin&key=master_token&v=205&rand=998877&config=http://127.0.0.1:8080/config.xml&site=http://127.0.0.1:8080/" />
+            <embed 
+                src="/flash/Loading.swf" 
+                width="1000" 
+                height="600" 
+                quality="high" 
+                bgcolor="#000000" 
+                allowScriptAccess="always" 
+                allowFullScreen="true" 
+                wmode="direct"
+                type="application/x-shockwave-flash" 
+                pluginspage="http://www.macromedia.com/go/getflashplayer" 
+                flashvars="user=Admin&username=Admin&key=master_token&v=205&rand=998877&config=http://127.0.0.1:8080/config.xml&site=http://127.0.0.1:8080/">
+        </object>
     </div>
 </body>
 </html>
