@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
+    <config>
+        <FLASHSITE value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</FLASHSITE>
+        <BACKUP_FLASHSITE value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</BACKUP_FLASHSITE>
+        <SITE value="http://127.0.0.1:8080/">http://127.0.0.1:8080/</SITE>
+        <REQUEST_PATH value="http://127.0.0.1:8080/request/">http://127.0.0.1:8080/request/</REQUEST_PATH>
+        <RES_PATH value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</RES_PATH>
+        <MAP_PATH value="http://127.0.0.1:8080/flash/map/">http://127.0.0.1:8080/flash/map/</MAP_PATH>
+        <STYLE_PATH value="http://127.0.0.1:8080/flash/style/">http://127.0.0.1:8080/flash/style/</STYLE_PATH>
+        <TRAINER_PATH value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</TRAINER_PATH>
+        <FIRSTPAGE value="http://127.0.0.1:8080/player.html">http://127.0.0.1:8080/player.html</FIRSTPAGE>
+        <REGISTER value="http://127.0.0.1:8080/register">http://127.0.0.1:8080/register</REGISTER>
+        <FILL_PATH value="http://127.0.0.1:8080/fill/">http://127.0.0.1:8080/fill/</FILL_PATH>
+        <PHP_PATH value="http://127.0.0.1:8080/">http://127.0.0.1:8080/</PHP_PATH>
+        <OFFICIAL_SITE value="http://127.0.0.1:8080/">http://127.0.0.1:8080/</OFFICIAL_SITE>
+        <SERVERNAME value="DDTank Brasil - Servidor Local">DDTank Brasil - Servidor Local</SERVERNAME>
+        <USE_MD5 value="false">false</USE_MD5>
+        <USEMD5 value="false">false</USEMD5>
+        <TRAIN_STEP enable="false" />
+        <LOADER_TOTAL_NUM value="8">8</LOADER_TOTAL_NUM>
+        <SHOW_BACKGROUND value="true">true</SHOW_BACKGROUND>
+        <FIGHTLIB_ENABLE value="true">true</FIGHTLIB_ENABLE>
+        <SPA_ENABLE value="true">true</SPA_ENABLE>
+        <CHURCH_ENABLE value="true">true</CHURCH_ENABLE>
+        <CIVIL_ENABLE value="true">true</CIVIL_ENABLE>
+        <ACHIEVE_ENABLE value="true">true</ACHIEVE_ENABLE>
+        <TRAINER_STANDALONE value="true">true</TRAINER_STANDALONE>
+        <AUTO_UNLOCK value="true">true</AUTO_UNLOCK>
+    </config>
     <FLASHSITE value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</FLASHSITE>
     <BACKUP_FLASHSITE value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</BACKUP_FLASHSITE>
     <SITE value="http://127.0.0.1:8080/">http://127.0.0.1:8080/</SITE>
@@ -18,6 +46,7 @@
     <USEMD5 value="false">false</USEMD5>
     <TRAIN_STEP enable="false" />
     <LOADER_TOTAL_NUM value="8">8</LOADER_TOTAL_NUM>
+    <SHOW_BACKGROUND value="true">true</SHOW_BACKGROUND>
     <FIGHTLIB_ENABLE value="true">true</FIGHTLIB_ENABLE>
     <SPA_ENABLE value="true">true</SPA_ENABLE>
     <CHURCH_ENABLE value="true">true</CHURCH_ENABLE>
