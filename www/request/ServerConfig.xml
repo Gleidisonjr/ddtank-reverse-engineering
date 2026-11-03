@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Result value="true" message="Success">
+    <Item Name="VIPLevelExp" Value="0,100,500,1500,3500,7000,12000,18000,25000,35000,50000,80000" />
+    <Item Name="MaxLevel" Value="65" />
+    <Item Name="FightPowerRate" Value="1.0" />
+    <Item Name="CanBuyProp" Value="true" />
+    <Item Name="AutoOpenHole" Value="true" />
+</Result>

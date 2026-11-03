@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+.pytest_cache/
+
+# Distribution & Binaries
+dist/
+runtime/
+*.exe
+*.dll
+*.node
+*.zip
+*.7z
+*.tar.gz
+
+# OS Metadata
+.DS_Store
+Thumbs.db

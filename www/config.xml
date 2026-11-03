@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <FLASHSITE value="http://127.0.0.1:8080/flash/" />
+    <BACKUP_FLASHSITE value="http://127.0.0.1:8080/flash/" />
+    <SITE value="http://127.0.0.1:8080/" />
+    <REQUEST_PATH value="http://127.0.0.1:8080/request/" />
+    <RES_PATH value="http://127.0.0.1:8080/flash/" />
+    <MAP_PATH value="http://127.0.0.1:8080/flash/map/" />
+    <STYLE_PATH value="http://127.0.0.1:8080/flash/style/" />
+    <TRAINER_PATH value="http://127.0.0.1:8080/flash/" />
+    <FIRSTPAGE value="http://127.0.0.1:8080/player.html" />
+    <REGISTER value="http://127.0.0.1:8080/register" />
+    <FILL_PATH value="http://127.0.0.1:8080/fill/" />
+    <PHP_PATH value="http://127.0.0.1:8080/" />
+    <OFFICIAL_SITE value="http://127.0.0.1:8080/" />
+    <SERVERNAME value="DDTank Brasil - Servidor Local" />
+    <USE_MD5 value="false" />
+    <FIGHTLIB_ENABLE value="true" />
+    <SPA_ENABLE value="true" />
+    <CHURCH_ENABLE value="true" />
+    <CIVIL_ENABLE value="true" />
+    <ACHIEVE_ENABLE value="true" />
+    <TRAINER_STANDALONE value="true" />
+    <AUTO_UNLOCK value="true" />
+</config>

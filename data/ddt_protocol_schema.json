@@ -1,0 +1,5250 @@
+{
+  "metadata": {
+    "target": "DDClássico (ddclassico.com) v2.0.5",
+    "swf_source": "2.swf (decompressed 2.png, 7.27 MB)",
+    "header_magic": "0x71AB (29099)",
+    "header_size": 20,
+    "default_cipher_key": [
+      174,
+      191,
+      86,
+      120,
+      171,
+      205,
+      239,
+      241
+    ],
+    "checksum_algorithm": "sum(buffer[6:]) + 119 & 0x7F7F",
+    "cipher_algorithm": "Rolling byte XOR with dynamic key mutation: key[i%8] = (key[i%8] + prev_byte) ^ i"
+  },
+  "packet_types": {
+    "AvatarCollection/AvatarCollectionPackageType": {
+      "class_name": "AvatarCollectionPackageType",
+      "constants_count": 4,
+      "constants": {
+        "GET_ALL_INFO": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "ACTIVE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "DELAY_TIME": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "RENEW_ALL": {
+          "value": 6,
+          "hex": "0x6"
+        }
+      }
+    },
+    "catchbeast/date/CatchBeastPackageType": {
+      "class_name": "CatchBeastPackageType",
+      "constants_count": 5,
+      "constants": {
+        "CATCHBEAST_BEGIN": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "CATCHBEAST_VIEWINFO": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "CATCHBEAST_CHALLENGE": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "CATCHBEAST_BUYBUFF": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "CATCHBEAST_GETAWARD": {
+          "value": 36,
+          "hex": "0x24"
+        }
+      }
+    },
+    "ddt/data/socket/AcademyPackageType": {
+      "class_name": "AcademyPackageType",
+      "constants_count": 15,
+      "constants": {
+        "ACADEMY_FATHER": {
+          "value": 141,
+          "hex": "0x8d"
+        },
+        "ACADEMY_REGISTER": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "ACADEMY_REMOVE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "ACADEMY_FOR_APPRENTICE": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "ACADEMY_FOR_MASTER": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "MASTER_CONFIRM": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "APPRENTICE_CONFIRM": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "MASTER_REFUSE": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "APPRENTICE_REFUSE": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "UPDATE_APP_STATES": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "FIRE_MASTER": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "FIRE_APPRENTICE": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "APPRENTICE_GRADUTE": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "UPDATE_FRIENDS_APP_STATE": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "APPRENTICESHIPSYSTEM_ALERT": {
+          "value": 17,
+          "hex": "0x11"
+        }
+      }
+    },
+    "ddt/data/socket/ActivityPackageType": {
+      "class_name": "ActivityPackageType",
+      "constants_count": 8,
+      "constants": {
+        "EVERYDAYACTIVEPOINT_DATA": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "EVERYDAYACTIVEPOINT_CHANGE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "USEMONEYPOINT_COMPLETE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "GETACTIVEPOINT_REWARD": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "REUSEMONEYPOINT_COMPLETE": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "REGETACTIVEPOINT_REWARD": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "ADD_ACTIVITY_DATA_CHANGE": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "GET_EXPBLESSED_DATA": {
+          "value": 8,
+          "hex": "0x8"
+        }
+      }
+    },
+    "ddt/data/socket/ChurchPackageType": {
+      "class_name": "ChurchPackageType",
+      "constants_count": 14,
+      "constants": {
+        "MOVE": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "HYMENEAL": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "CONTINUATION": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "INVITE": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "LARGESS": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "MARRYROOMSENDGIFT": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "CLIENTCONFIRM": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "BEGINSENDGIFT": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "USEFIRECRACKERS": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "KICK": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "FORBID": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "HYMENEAL_STOP": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "POSITION": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "GUNSALUTE": {
+          "value": 11,
+          "hex": "0xb"
+        }
+      }
+    },
+    "ddt/data/socket/ConsortiaPackageType": {
+      "class_name": "ConsortiaPackageType",
+      "constants_count": 30,
+      "constants": {
+        "CONSORTIA_TRYIN": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "CONSORTIA_CREATE": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "CONSORTIA_DISBAND": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "CONSORTIA_RENEGADE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "CONSORTIA_TRYIN_PASS": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "CONSORTIA_TRYIN_DEL": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "CONSORTIA_RICHES_OFFER": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "CONSORTIA_APPLY_STATE": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "CONSORTIA_DUTY_DELETE": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "CONSORTIA_DUTY_UPDATE": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "CONSORTIA_INVITE": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "CONSORTIA_INVITE_PASS": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "CONSORTIA_INVITE_DELETE": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "CONSORTIA_DESCRIPTION_UPDATE": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "CONSORTIA_PLACARD_UPDATE": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "CONSORTIA_BANCHAT_UPDATE": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "CONSORTIA_USER_REMARK_UPDATE": {
+          "value": 17,
+          "hex": "0x11"
+        },
+        "CONSORTIA_USER_GRADE_UPDATE": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "CONSORTIA_CHAIRMAN_CHAHGE": {
+          "value": 19,
+          "hex": "0x13"
+        },
+        "CONSORTIA_CHAT": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "CONSORTIA_LEVEL_UP": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "CONSORTIA_TASK_RELEASE": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "DONATE": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "CONSORTIA_EQUIP_CONTROL": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "POLL_CANDIDATE": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "SKILL_SOCKET": {
+          "value": 26,
+          "hex": "0x1a"
+        },
+        "CONSORTION_MAIL": {
+          "value": 29,
+          "hex": "0x1d"
+        },
+        "BUY_BADGE": {
+          "value": 28,
+          "hex": "0x1c"
+        },
+        "CONSORTIA_BOSS_INFO": {
+          "value": 30,
+          "hex": "0x1e"
+        },
+        "BOSS_OPEN_CLOSE": {
+          "value": 31,
+          "hex": "0x1f"
+        }
+      }
+    },
+    "ddt/data/socket/CrazyTankPackageType": {
+      "class_name": "CrazyTankPackageType",
+      "constants_count": 140,
+      "constants": {
+        "MOVE": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "FIRE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "BLAST": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "TURN": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "DIRECTION": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "SEND_PICTURE": {
+          "value": 128,
+          "hex": "0x80"
+        },
+        "GUN_ROTATION": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "MOVESTART": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "CHANGE_STATE": {
+          "value": 118,
+          "hex": "0x76"
+        },
+        "MOVESTOP": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "HEALTH": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "SKIPNEXT": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "STUNT": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "DANDER": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "REDUCE_DANDER": {
+          "value": 242,
+          "hex": "0xf2"
+        },
+        "DELAY": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "LOAD": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "SUICIDE": {
+          "value": 17,
+          "hex": "0x11"
+        },
+        "CHANGEBALL": {
+          "value": 19,
+          "hex": "0x13"
+        },
+        "CHANGE_BALL": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "KILLSELF": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "BEAT": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "USEPROP": {
+          "value": 42,
+          "hex": "0x2a"
+        },
+        "ATTACKUP": {
+          "value": 43,
+          "hex": "0x2b"
+        },
+        "SHOOTSTRAIGHT": {
+          "value": 44,
+          "hex": "0x2c"
+        },
+        "ADDWOUND": {
+          "value": 45,
+          "hex": "0x2d"
+        },
+        "ADDATTACK": {
+          "value": 46,
+          "hex": "0x2e"
+        },
+        "ADDBALL": {
+          "value": 47,
+          "hex": "0x2f"
+        },
+        "PROP": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "FROST": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "NONOLE": {
+          "value": 82,
+          "hex": "0x52"
+        },
+        "PLAYER_PROPERTY": {
+          "value": 41,
+          "hex": "0x29"
+        },
+        "INVINCIBLY": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "HIDE": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "CARRY": {
+          "value": 36,
+          "hex": "0x24"
+        },
+        "BECKON": {
+          "value": 37,
+          "hex": "0x25"
+        },
+        "VANE": {
+          "value": 38,
+          "hex": "0x26"
+        },
+        "AIRPLANE": {
+          "value": 40,
+          "hex": "0x28"
+        },
+        "USE_DEPUTY_WEAPON": {
+          "value": 84,
+          "hex": "0x54"
+        },
+        "GEM_GLOW": {
+          "value": 129,
+          "hex": "0x81"
+        },
+        "ADD_TIP_LAYER": {
+          "value": 68,
+          "hex": "0x44"
+        },
+        "ADD_MAP_THINGS": {
+          "value": 48,
+          "hex": "0x30"
+        },
+        "PICK": {
+          "value": 49,
+          "hex": "0x31"
+        },
+        "ARKPOINT": {
+          "value": 50,
+          "hex": "0x32"
+        },
+        "TAKEOUT": {
+          "value": 51,
+          "hex": "0x33"
+        },
+        "FIGHTPROP": {
+          "value": 52,
+          "hex": "0x34"
+        },
+        "DISAPPEAR": {
+          "value": 53,
+          "hex": "0x35"
+        },
+        "GHOST_TARGET": {
+          "value": 54,
+          "hex": "0x36"
+        },
+        "PROP_DELETE": {
+          "value": 75,
+          "hex": "0x4b"
+        },
+        "FIRE_TAG": {
+          "value": 96,
+          "hex": "0x60"
+        },
+        "WANNA_LEADER": {
+          "value": 97,
+          "hex": "0x61"
+        },
+        "TAKE_CARD": {
+          "value": 98,
+          "hex": "0x62"
+        },
+        "START_GAME": {
+          "value": 99,
+          "hex": "0x63"
+        },
+        "GAME_OVER": {
+          "value": 100,
+          "hex": "0x64"
+        },
+        "GAME_CREATE": {
+          "value": 101,
+          "hex": "0x65"
+        },
+        "GAME_CAPTAIN_AFFIRM": {
+          "value": 102,
+          "hex": "0x66"
+        },
+        "GAME_LOAD": {
+          "value": 103,
+          "hex": "0x67"
+        },
+        "MISSION_OVE": {
+          "value": 112,
+          "hex": "0x70"
+        },
+        "GAME_ALL_MISSION_OVER": {
+          "value": 115,
+          "hex": "0x73"
+        },
+        "PLAY_MOVIE": {
+          "value": 60,
+          "hex": "0x3c"
+        },
+        "PLAY_SOUND": {
+          "value": 63,
+          "hex": "0x3f"
+        },
+        "LOAD_RESOURCE": {
+          "value": 67,
+          "hex": "0x43"
+        },
+        "ADD_LIVING": {
+          "value": 64,
+          "hex": "0x40"
+        },
+        "LIVING_MOVETO": {
+          "value": 55,
+          "hex": "0x37"
+        },
+        "LIVING_FALLING": {
+          "value": 56,
+          "hex": "0x38"
+        },
+        "LIVING_JUMP": {
+          "value": 57,
+          "hex": "0x39"
+        },
+        "LIVING_BEAT": {
+          "value": 58,
+          "hex": "0x3a"
+        },
+        "LIVING_SAY": {
+          "value": 59,
+          "hex": "0x3b"
+        },
+        "LIVING_RANGEATTACKING": {
+          "value": 61,
+          "hex": "0x3d"
+        },
+        "FOCUS_ON_OBJECT": {
+          "value": 62,
+          "hex": "0x3e"
+        },
+        "BARRIER_INFO": {
+          "value": 104,
+          "hex": "0x68"
+        },
+        "FIGHT_LIB_INFO_CHANGE": {
+          "value": -1,
+          "hex": "-0x1"
+        },
+        "PASS_STORY": {
+          "value": 133,
+          "hex": "0x85"
+        },
+        "ADD_MAP_THING": {
+          "value": 65,
+          "hex": "0x41"
+        },
+        "UPDATE_BOARD_STATE": {
+          "value": 66,
+          "hex": "0x42"
+        },
+        "GAME_MISSION_INFO": {
+          "value": 113,
+          "hex": "0x71"
+        },
+        "PAYMENT_TAKE_CARD": {
+          "value": 114,
+          "hex": "0x72"
+        },
+        "INSUFFICIENT_MONEY": {
+          "value": 88,
+          "hex": "0x58"
+        },
+        "SHOW_CARDS": {
+          "value": 89,
+          "hex": "0x59"
+        },
+        "GAME_MISSION_START": {
+          "value": 82,
+          "hex": "0x52"
+        },
+        "GAME_MISSION_PREPARE": {
+          "value": 116,
+          "hex": "0x74"
+        },
+        "GAME_MISSION_TRY_AGAIN": {
+          "value": 119,
+          "hex": "0x77"
+        },
+        "LIVING_DIR_CHANGED": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "PLAY_INFO_IN_GAME": {
+          "value": 120,
+          "hex": "0x78"
+        },
+        "GAME_ROOM_INFO": {
+          "value": 121,
+          "hex": "0x79"
+        },
+        "BOSS_TAKE_CARD": {
+          "value": 130,
+          "hex": "0x82"
+        },
+        "SYNC_LIFETIME": {
+          "value": 131,
+          "hex": "0x83"
+        },
+        "PLAY_ASIDE": {
+          "value": 132,
+          "hex": "0x84"
+        },
+        "FORBID_DRAG": {
+          "value": 69,
+          "hex": "0x45"
+        },
+        "TOP_LAYER": {
+          "value": 70,
+          "hex": "0x46"
+        },
+        "CONTROL_BGM": {
+          "value": 71,
+          "hex": "0x47"
+        },
+        "LIVING_BOLTMOVE": {
+          "value": 72,
+          "hex": "0x48"
+        },
+        "CHANGE_TARGET": {
+          "value": 73,
+          "hex": "0x49"
+        },
+        "LIVING_SHOW_BLOOD": {
+          "value": 80,
+          "hex": "0x50"
+        },
+        "TEMP_STYLE": {
+          "value": 134,
+          "hex": "0x86"
+        },
+        "ACTION_MAPPING": {
+          "value": 223,
+          "hex": "0xdf"
+        },
+        "FIGHT_ACHIEVEMENT": {
+          "value": 238,
+          "hex": "0xee"
+        },
+        "APPLYSKILL": {
+          "value": 239,
+          "hex": "0xef"
+        },
+        "REMOVESKILL": {
+          "value": 240,
+          "hex": "0xf0"
+        },
+        "MAXFORCE_CHANGED": {
+          "value": 135,
+          "hex": "0x87"
+        },
+        "GENERAL_COMMAND": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "POPUP_QUESTION_FRAME": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "MISSION_CMD": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "WIND_PIC": {
+          "value": 241,
+          "hex": "0xf1"
+        },
+        "SYSMESSAGE": {
+          "value": 221,
+          "hex": "0xdd"
+        },
+        "LIVING_CHAGEANGLE": {
+          "value": 85,
+          "hex": "0x55"
+        },
+        "ADD_PET_EQUIP": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "UPDATE_PET": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "DEL_PET_EQUIP": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "EAT_PETS": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "EQUIP_PET_SKILL": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "REFRESH_PET": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "ADD_PET": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "RELEASE_PET": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "RENAME_PET": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "PAY_SKILL": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "FIGHT_PET": {
+          "value": 17,
+          "hex": "0x11"
+        },
+        "REVER_PET": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "ADOPT_PET": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "PET_RISINGSTAR": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "PET_EVOLUTION": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "FEED_PET": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "PET_FORMINFO": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "PET_FOLLOW": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "PET_WAKE": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "DELIVER": {
+          "value": 137,
+          "hex": "0x89"
+        },
+        "PET_SKILL": {
+          "value": 144,
+          "hex": "0x90"
+        },
+        "PET_BUFF": {
+          "value": 145,
+          "hex": "0x91"
+        },
+        "PET_BEAT": {
+          "value": 146,
+          "hex": "0x92"
+        },
+        "PET_SKILL_CD": {
+          "value": 147,
+          "hex": "0x93"
+        },
+        "PET_GET_INFO": {
+          "value": 148,
+          "hex": "0x94"
+        },
+        "ROUND_ONE_END": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "PSYCHIC_SET": {
+          "value": 252,
+          "hex": "0xfc"
+        },
+        "PSYCHIC_ADD": {
+          "value": 253,
+          "hex": "0xfd"
+        },
+        "GAME_TRUSTEESHIP": {
+          "value": 149,
+          "hex": "0x95"
+        },
+        "GAME_FREEWALK": {
+          "value": 136,
+          "hex": "0x88"
+        },
+        "RESCUE_ITEM_INFO": {
+          "value": 93,
+          "hex": "0x5d"
+        },
+        "RESCUE_KING_BLESS": {
+          "value": 94,
+          "hex": "0x5e"
+        },
+        "ADD_SCORE": {
+          "value": 95,
+          "hex": "0x5f"
+        },
+        "SET_PROP_ENABLE": {
+          "value": 150,
+          "hex": "0x96"
+        }
+      }
+    },
+    "ddt/data/socket/EliteGamePackageType": {
+      "class_name": "EliteGamePackageType",
+      "constants_count": 5,
+      "constants": {
+        "ELITE_MATCH_TYPE": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "ELITE_MATCH_RANK_START": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "ELITE_MATCH_PLAYER_RANK": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "ELITE_MATCH_RANK_DETAIL": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "ELITE_MATCH_PENDING": {
+          "value": 5,
+          "hex": "0x5"
+        }
+      }
+    },
+    "ddt/data/socket/FightSpiritPackageType": {
+      "class_name": "FightSpiritPackageType",
+      "constants_count": 4,
+      "constants": {
+        "FIGHT_SPIRIT_INIT": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "PLAYER_FIGHT_SPIRIT_UP": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "FIGHT_SPIRIT_LEVELUP": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "REFIGHTSPIRITNUM_CHANGE": {
+          "value": 4,
+          "hex": "0x4"
+        }
+      }
+    },
+    "ddt/data/socket/GameRoomPackageType": {
+      "class_name": "GameRoomPackageType",
+      "constants_count": 19,
+      "constants": {
+        "SINGLE_ROOM_BEGIN": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "GAME_ROOM_CREATE": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "GAME_ROOM_LOGIN": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "GAME_ROOM_SETUP_CHANGE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "GAME_ROOM_KICK": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "GAME_ROOM_ADDPLAYER": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "GAME_ROOM_REMOVEPLAYER": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "GAME_TEAM": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "GAME_START": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "ROOMLIST_UPDATE": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "GAME_ROOM_UPDATE_PLACE": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "GAME_PICKUP_CANCEL": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "GAME_PICKUP_STYLE": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "GAME_PICKUP_WAIT": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "ROOM_PASS": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "GAME_PLAYER_STATE_CHANGE": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "PASSED_WARRIORSARENA_10": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "No_WARRIORSARENA_TICKET": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "LAST_MISSION_FOR_WARRIORSARENA": {
+          "value": 33,
+          "hex": "0x21"
+        }
+      }
+    },
+    "ddt/data/socket/HotSpringPackageType": {
+      "class_name": "HotSpringPackageType",
+      "constants_count": 7,
+      "constants": {
+        "TARGET_POINT": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "HOTSPRING_ROOM_TIME_UPDATE": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "HOTSPRING_ROOM_RENEWAL_FEE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "HOTSPRING_ROOM_INVITE": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "HOTSPRING_ROOM_EDIT": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "HOTSPRING_ROOM_ADMIN_REMOVE_PLAYER": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "HOTSPRING_ROOM_PLAYER_CONTINUE": {
+          "value": 10,
+          "hex": "0xa"
+        }
+      }
+    },
+    "ddt/data/socket/IMPackageType": {
+      "class_name": "IMPackageType",
+      "constants_count": 9,
+      "constants": {
+        "FRIEND_ADD": {
+          "value": 160,
+          "hex": "0xa0"
+        },
+        "FRIEND_REMOVE": {
+          "value": 161,
+          "hex": "0xa1"
+        },
+        "FRIEND_UPDATE": {
+          "value": 162,
+          "hex": "0xa2"
+        },
+        "FRIEND_STATE": {
+          "value": 165,
+          "hex": "0xa5"
+        },
+        "ONS_EQUIP": {
+          "value": 45,
+          "hex": "0x2d"
+        },
+        "FRIEND_RESPONSE": {
+          "value": 166,
+          "hex": "0xa6"
+        },
+        "SAME_CITY_FRIEND": {
+          "value": 164,
+          "hex": "0xa4"
+        },
+        "ADD_CUSTOM_FRIENDS": {
+          "value": 208,
+          "hex": "0xd0"
+        },
+        "ONE_ON_ONE_TALK": {
+          "value": 51,
+          "hex": "0x33"
+        }
+      }
+    },
+    "ddt/data/socket/NewQuestPackageType": {
+      "class_name": "NewQuestPackageType",
+      "constants_count": 4,
+      "constants": {
+        "BEGIN_LOADING": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "RECEIVE_QUEST": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "REQUEST_QUESTS": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "END_LOADING": {
+          "value": 3,
+          "hex": "0x3"
+        }
+      }
+    },
+    "ddt/data/socket/RegressPackageType": {
+      "class_name": "RegressPackageType",
+      "constants_count": 11,
+      "constants": {
+        "REGRESS_PACKS": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "REGRESS_GETPACKS": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "REGRESS_CHECK": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "REGRESS_APPLYPACKS": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "REGRESS_CALL": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "REGRESS_REVCPACKS": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "REGRESS_APPLY_ENABLE": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "REGRESS_GET_TICKETINFO": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "REGRESS_GET_TICKET": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "REGRESS_UPDATE_INTEGRAL": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "REGRESS_INTEGRAL_BUY": {
+          "value": 10,
+          "hex": "0xa"
+        }
+      }
+    },
+    "ddt/data/socket/SearchGoodsPackageType": {
+      "class_name": "SearchGoodsPackageType",
+      "constants_count": 19,
+      "constants": {
+        "TRYENTER": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "RollDice": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "UpgradeStartLevel": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "TakeCard": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "Refresh": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "QuitTakeCard": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "PlayerEnter": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "PlayerRollDice": {
+          "value": 17,
+          "hex": "0x11"
+        },
+        "PlayerUpgradeStartLevel": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "BeforeStep": {
+          "value": 19,
+          "hex": "0x13"
+        },
+        "BackStep": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "ReachTheEnd": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "BackToStart": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "GetGoods": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "FlopCard": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "PlayNowPosition": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "TakeCardResponse": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "RemoveEvent": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "OneStep": {
+          "value": 34,
+          "hex": "0x22"
+        }
+      }
+    },
+    "ddt/data/socket/TreasurePackageType": {
+      "class_name": "TreasurePackageType",
+      "constants_count": 8,
+      "constants": {
+        "INIT_TREASURE": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "PAY_FOR_HUNTING": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "GET_ALL_TREASURE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "UPDATE_TREASURE_BAG": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "HUNTING_BY_SCORE": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "CONVERT_SCORE": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "GET_MYSTERIOUS_DATA": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "DAWN_LOTTERY": {
+          "value": 17,
+          "hex": "0x11"
+        }
+      }
+    },
+    "ddt/data/socket/ePackageType": {
+      "class_name": "ePackageType",
+      "constants_count": 288,
+      "constants": {
+        "OLDPLAYER_REGRESS": {
+          "value": 149,
+          "hex": "0x95"
+        },
+        "PROP_USE": {
+          "value": 66,
+          "hex": "0x42"
+        },
+        "LEAGUE_START_NOTICE": {
+          "value": 42,
+          "hex": "0x2a"
+        },
+        "SYSTEM_LUCKYNUM": {
+          "value": 47,
+          "hex": "0x2f"
+        },
+        "USER_LUCKYNUM": {
+          "value": 161,
+          "hex": "0xa1"
+        },
+        "WEEKLY_CLICK_CNT": {
+          "value": 219,
+          "hex": "0xdb"
+        },
+        "USER_ANSWER": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "BAG_LOCKED": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "MARRY_ROOM_CREATE": {
+          "value": 241,
+          "hex": "0xf1"
+        },
+        "MARRY_ROOM_LOGIN": {
+          "value": 242,
+          "hex": "0xf2"
+        },
+        "MARRY_SCENE_LOGIN": {
+          "value": 240,
+          "hex": "0xf0"
+        },
+        "PLAYER_ENTER_MARRY_ROOM": {
+          "value": 243,
+          "hex": "0xf3"
+        },
+        "PLAYER_EXIT_MARRY_ROOM": {
+          "value": 244,
+          "hex": "0xf4"
+        },
+        "MARRY_APPLY": {
+          "value": 247,
+          "hex": "0xf7"
+        },
+        "MARRY_APPLY_REPLY": {
+          "value": 250,
+          "hex": "0xfa"
+        },
+        "DIVORCE_APPLY": {
+          "value": 248,
+          "hex": "0xf8"
+        },
+        "MARRY_STATUS": {
+          "value": 246,
+          "hex": "0xf6"
+        },
+        "SCENE_STATE": {
+          "value": 251,
+          "hex": "0xfb"
+        },
+        "QQTIPS_GET_INFO": {
+          "value": 99,
+          "hex": "0x63"
+        },
+        "EDICTUM_GET_SERVION": {
+          "value": 75,
+          "hex": "0x4b"
+        },
+        "MARRY_ROOM_STATE": {
+          "value": 252,
+          "hex": "0xfc"
+        },
+        "MARRY_ROOM_INFO_UPDATE": {
+          "value": 253,
+          "hex": "0xfd"
+        },
+        "MARRYPROP_GET": {
+          "value": 234,
+          "hex": "0xea"
+        },
+        "MARRY_ROOM_UPDATE": {
+          "value": 255,
+          "hex": "0xff"
+        },
+        "MARRY_ROOM_DISPOSE": {
+          "value": 254,
+          "hex": "0xfe"
+        },
+        "MARRY_CMD": {
+          "value": 249,
+          "hex": "0xf9"
+        },
+        "CHURCH_MOVIE_OVER": {
+          "value": 167,
+          "hex": "0xa7"
+        },
+        "MARRY_SCENE_CHANGE": {
+          "value": 233,
+          "hex": "0xe9"
+        },
+        "CLIENT_LOG": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "SCENE_CHAT": {
+          "value": 19,
+          "hex": "0x13"
+        },
+        "SCENE_FACE": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "SCENE_CHANNEL_CHANGE": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "CHANGE_STATE": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "CHANGE_NICKNAME": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "AC_ACTION": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "SYNCH_ACTION": {
+          "value": 36,
+          "hex": "0x24"
+        },
+        "CHAT_PERSONAL": {
+          "value": 37,
+          "hex": "0x25"
+        },
+        "UPDATE_PRIVATE_INFO": {
+          "value": 38,
+          "hex": "0x26"
+        },
+        "UPDATE_HOTPOINT": {
+          "value": 39,
+          "hex": "0x27"
+        },
+        "GET_DYNAMIC": {
+          "value": 39,
+          "hex": "0x27"
+        },
+        "SNS_MSG_RECEIVE": {
+          "value": 40,
+          "hex": "0x28"
+        },
+        "SAVE_STYLE": {
+          "value": 41,
+          "hex": "0x29"
+        },
+        "DELETE_GOODS": {
+          "value": 42,
+          "hex": "0x2a"
+        },
+        "CONSORTIA_MAIL_MESSAGE": {
+          "value": 43,
+          "hex": "0x2b"
+        },
+        "ROOM_SAVE_OBJECT": {
+          "value": 128,
+          "hex": "0x80"
+        },
+        "GAME_VISITOR_DATA": {
+          "value": 224,
+          "hex": "0xe0"
+        },
+        "LOGIN": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "DAILY_AWARD": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "GET_SIGNAWARD": {
+          "value": 90,
+          "hex": "0x5a"
+        },
+        "GAME_ROOM": {
+          "value": 94,
+          "hex": "0x5e"
+        },
+        "SCENE_ADD_USER": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "BULK_SCENE_ADD_USER": {
+          "value": 1800,
+          "hex": "0x708"
+        },
+        "KIT_USER": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "SCENE_LOGIN": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "GAME_CMD": {
+          "value": 91,
+          "hex": "0x5b"
+        },
+        "GAME_CHANGE_MAP": {
+          "value": 104,
+          "hex": "0x68"
+        },
+        "SCENE_REMOVE_USER": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "CHANGE_PLACE_GOODS": {
+          "value": 49,
+          "hex": "0x31"
+        },
+        "REClAIM_GOODS": {
+          "value": 127,
+          "hex": "0x7f"
+        },
+        "CHANGE_PLACE_GOODS_ALL": {
+          "value": 124,
+          "hex": "0x7c"
+        },
+        "SEll_GOODS": {
+          "value": 48,
+          "hex": "0x30"
+        },
+        "USER_RANK": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "FIGHT_NPC": {
+          "value": 50,
+          "hex": "0x32"
+        },
+        "UPDATE_GOODS": {
+          "value": 51,
+          "hex": "0x33"
+        },
+        "UPDATE_COUPONS": {
+          "value": 46,
+          "hex": "0x2e"
+        },
+        "ITEM_STORE": {
+          "value": 79,
+          "hex": "0x4f"
+        },
+        "BUY_GOODS": {
+          "value": 44,
+          "hex": "0x2c"
+        },
+        "BUY_QUICK_GOLDBOX": {
+          "value": 126,
+          "hex": "0x7e"
+        },
+        "BUY_GIFTBAG": {
+          "value": 46,
+          "hex": "0x2e"
+        },
+        "CHAIN_EQUIP": {
+          "value": 52,
+          "hex": "0x34"
+        },
+        "UNCHAIN_EQUIP": {
+          "value": 47,
+          "hex": "0x2f"
+        },
+        "REPAIR_GOODS": {
+          "value": 53,
+          "hex": "0x35"
+        },
+        "DELETE_MAIL": {
+          "value": 112,
+          "hex": "0x70"
+        },
+        "GET_MAIL_ATTACHMENT": {
+          "value": 113,
+          "hex": "0x71"
+        },
+        "UPDATE_MAIL": {
+          "value": 114,
+          "hex": "0x72"
+        },
+        "UPDATE_NEW_MAIL": {
+          "value": 115,
+          "hex": "0x73"
+        },
+        "SEND_MAIL": {
+          "value": 116,
+          "hex": "0x74"
+        },
+        "MAIL_RESPONSE": {
+          "value": 117,
+          "hex": "0x75"
+        },
+        "MAIL_CANCEL": {
+          "value": 118,
+          "hex": "0x76"
+        },
+        "PROP_BUY": {
+          "value": 54,
+          "hex": "0x36"
+        },
+        "PROP_SELL": {
+          "value": 55,
+          "hex": "0x37"
+        },
+        "PROP_CHAIN": {
+          "value": 56,
+          "hex": "0x38"
+        },
+        "GOODS_PRESENT": {
+          "value": 57,
+          "hex": "0x39"
+        },
+        "GOODS_COUNT": {
+          "value": 168,
+          "hex": "0xa8"
+        },
+        "GRID_GOODS": {
+          "value": 64,
+          "hex": "0x40"
+        },
+        "GRID_PROP": {
+          "value": 65,
+          "hex": "0x41"
+        },
+        "UPDATE_PLAYER_INFO": {
+          "value": 67,
+          "hex": "0x43"
+        },
+        "GAME_TAKE_OUT": {
+          "value": 406,
+          "hex": "0x196"
+        },
+        "EQUIP_CHANGE": {
+          "value": 66,
+          "hex": "0x42"
+        },
+        "PING": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "NETWORK": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "GAME_TAKE_TEMP": {
+          "value": 108,
+          "hex": "0x6c"
+        },
+        "RSAKEY": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "SYS_MESSAGE": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "ITEM_COMPOSE": {
+          "value": 58,
+          "hex": "0x3a"
+        },
+        "ITEM_STRENGTHEN": {
+          "value": 59,
+          "hex": "0x3b"
+        },
+        "ITEM_TRANSFER": {
+          "value": 61,
+          "hex": "0x3d"
+        },
+        "GAME_CAPTAIN_CHOICE": {
+          "value": 110,
+          "hex": "0x6e"
+        },
+        "GAME_CAPTAIN_AFFIRM": {
+          "value": 111,
+          "hex": "0x6f"
+        },
+        "SCENE_USERS_LIST": {
+          "value": 69,
+          "hex": "0x45"
+        },
+        "GAME_INVITE": {
+          "value": 70,
+          "hex": "0x46"
+        },
+        "S_BUGLE": {
+          "value": 71,
+          "hex": "0x47"
+        },
+        "B_BUGLE": {
+          "value": 72,
+          "hex": "0x48"
+        },
+        "C_BUGLE": {
+          "value": 73,
+          "hex": "0x49"
+        },
+        "DEFY_AFFICHE": {
+          "value": 123,
+          "hex": "0x7b"
+        },
+        "ITEM_HIDE": {
+          "value": 60,
+          "hex": "0x3c"
+        },
+        "ITEM_OBTAIN": {
+          "value": 73,
+          "hex": "0x49"
+        },
+        "QUEST_ADD": {
+          "value": 176,
+          "hex": "0xb0"
+        },
+        "QUEST_REMOVE": {
+          "value": 177,
+          "hex": "0xb1"
+        },
+        "QUEST_UPDATE": {
+          "value": 178,
+          "hex": "0xb2"
+        },
+        "QUEST_FINISH": {
+          "value": 179,
+          "hex": "0xb3"
+        },
+        "QUSET_OBTAIN": {
+          "value": 180,
+          "hex": "0xb4"
+        },
+        "QUEST_CHECK": {
+          "value": 181,
+          "hex": "0xb5"
+        },
+        "ITEM_CONTINUE": {
+          "value": 62,
+          "hex": "0x3e"
+        },
+        "SYS_DATE": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "ITEM_EQUIP": {
+          "value": 74,
+          "hex": "0x4a"
+        },
+        "MATE_ONLINE_TIME": {
+          "value": 85,
+          "hex": "0x55"
+        },
+        "SYS_NOTICE": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "ITEM_OPENUP": {
+          "value": 63,
+          "hex": "0x3f"
+        },
+        "ACTIVE_PULLDOWN": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "EDITION_ERROR": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "ITEM_FUSION": {
+          "value": 78,
+          "hex": "0x4e"
+        },
+        "EQUIP_RECYCLE_ITEM": {
+          "value": 222,
+          "hex": "0xde"
+        },
+        "ITEM_FUSION_PREVIEW": {
+          "value": 76,
+          "hex": "0x4c"
+        },
+        "ITEM_REFINERY": {
+          "value": 110,
+          "hex": "0x6e"
+        },
+        "ITEM_REFINERY_PREVIEW": {
+          "value": 111,
+          "hex": "0x6f"
+        },
+        "ITEM_INLAY": {
+          "value": 121,
+          "hex": "0x79"
+        },
+        "ITEM_EMBED_BACKOUT": {
+          "value": 125,
+          "hex": "0x7d"
+        },
+        "OPEN_FIVE_SIX_HOLE": {
+          "value": 217,
+          "hex": "0xd9"
+        },
+        "ITEM_TREND": {
+          "value": 120,
+          "hex": "0x78"
+        },
+        "CLEAR_STORE_BAG": {
+          "value": 122,
+          "hex": "0x7a"
+        },
+        "ITEM_OVERDUE": {
+          "value": 77,
+          "hex": "0x4d"
+        },
+        "AUCTION_ADD": {
+          "value": 192,
+          "hex": "0xc0"
+        },
+        "AUCTION_UPDATE": {
+          "value": 193,
+          "hex": "0xc1"
+        },
+        "AUCTION_DELETE": {
+          "value": 194,
+          "hex": "0xc2"
+        },
+        "AUCTION_REFRESH": {
+          "value": 195,
+          "hex": "0xc3"
+        },
+        "CHECK_CODE": {
+          "value": 200,
+          "hex": "0xc8"
+        },
+        "CONSORTIA_CMD": {
+          "value": 129,
+          "hex": "0x81"
+        },
+        "CONSORTIA_RESPONSE": {
+          "value": 128,
+          "hex": "0x80"
+        },
+        "CID_CHECK": {
+          "value": 224,
+          "hex": "0xe0"
+        },
+        "ENTHRALL_LIGHT": {
+          "value": 227,
+          "hex": "0xe3"
+        },
+        "ENTHRALL_SWITCH": {
+          "value": 225,
+          "hex": "0xe1"
+        },
+        "CID_INFO_VALID": {
+          "value": 226,
+          "hex": "0xe2"
+        },
+        "BUFF_INFO": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "USE_COLOR_CARD": {
+          "value": 182,
+          "hex": "0xb6"
+        },
+        "CARD_USE": {
+          "value": 183,
+          "hex": "0xb7"
+        },
+        "USE_CHANGE_COLOR_SHELL": {
+          "value": 205,
+          "hex": "0xcd"
+        },
+        "CHANGE_COLOR_OVER_DUE": {
+          "value": 206,
+          "hex": "0xce"
+        },
+        "USE_REWORK_NAME": {
+          "value": 171,
+          "hex": "0xab"
+        },
+        "USE_CONSORTIA_REWORK_NAME": {
+          "value": 188,
+          "hex": "0xbc"
+        },
+        "BUFF_ADD": {
+          "value": 184,
+          "hex": "0xb8"
+        },
+        "BUFF_UPDATE": {
+          "value": 185,
+          "hex": "0xb9"
+        },
+        "BUFF_OBTAIN": {
+          "value": 186,
+          "hex": "0xba"
+        },
+        "MARRYINFO_GET": {
+          "value": 235,
+          "hex": "0xeb"
+        },
+        "MARRYINFO_ADD": {
+          "value": 236,
+          "hex": "0xec"
+        },
+        "MARRYINFO_UPDATE": {
+          "value": 237,
+          "hex": "0xed"
+        },
+        "MARRYINFO_DELETE": {
+          "value": 238,
+          "hex": "0xee"
+        },
+        "AMARRYINFO_REFRESH": {
+          "value": 239,
+          "hex": "0xef"
+        },
+        "LINKREQUEST_GOODS": {
+          "value": 119,
+          "hex": "0x77"
+        },
+        "GET_ITEM_MESS": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "SAVE_DB": {
+          "value": 172,
+          "hex": "0xac"
+        },
+        "LITTLEGAME_COMMAND": {
+          "value": 166,
+          "hex": "0xa6"
+        },
+        "HOTSPRING_CMD": {
+          "value": 191,
+          "hex": "0xbf"
+        },
+        "HOTSPRING_ENTER": {
+          "value": 187,
+          "hex": "0xbb"
+        },
+        "HOTSPRING_ROOM_CREATE": {
+          "value": 175,
+          "hex": "0xaf"
+        },
+        "HOTSPRING_ROOM_REMOVE": {
+          "value": 174,
+          "hex": "0xae"
+        },
+        "HOTSPRING_ROOM_ADD_OR_UPDATE": {
+          "value": 173,
+          "hex": "0xad"
+        },
+        "HOTSPRING_ROOM_LIST_GET": {
+          "value": 197,
+          "hex": "0xc5"
+        },
+        "HOTSPRING_ROOM_QUICK_ENTER": {
+          "value": 190,
+          "hex": "0xbe"
+        },
+        "HOTSPRING_ROOM_ENTER": {
+          "value": 202,
+          "hex": "0xca"
+        },
+        "HOTSPRING_ROOM_ENTER_VIEW": {
+          "value": 201,
+          "hex": "0xc9"
+        },
+        "HOTSPRING_ROOM_PLAYER_ADD": {
+          "value": 198,
+          "hex": "0xc6"
+        },
+        "HOTSPRING_ROOM_PLAYER_REMOVE": {
+          "value": 169,
+          "hex": "0xa9"
+        },
+        "HOTSPRING_ROOM_PLAYER_REMOVE_NOTICE": {
+          "value": 199,
+          "hex": "0xc7"
+        },
+        "HOTSPRING_ROOM_ENTER_CONFIRM": {
+          "value": 212,
+          "hex": "0xd4"
+        },
+        "GET_TIME_BOX": {
+          "value": 53,
+          "hex": "0x35"
+        },
+        "ACHIEVEMENT_FINISH": {
+          "value": 230,
+          "hex": "0xe6"
+        },
+        "ACHIEVEMENT_UPDATE": {
+          "value": 229,
+          "hex": "0xe5"
+        },
+        "ACHIEVEMENT_INIT": {
+          "value": 228,
+          "hex": "0xe4"
+        },
+        "ACHIEVEMENTDATA_INIT": {
+          "value": 231,
+          "hex": "0xe7"
+        },
+        "USER_CHANGE_RANK": {
+          "value": 189,
+          "hex": "0xbd"
+        },
+        "LOOKUP_EFFORT": {
+          "value": 203,
+          "hex": "0xcb"
+        },
+        "LOTTERY_OPEN_BOX": {
+          "value": 26,
+          "hex": "0x1a"
+        },
+        "LOTTERY_RANDOM_SELECT": {
+          "value": 27,
+          "hex": "0x1b"
+        },
+        "LOTTERY_FINISH": {
+          "value": 28,
+          "hex": "0x1c"
+        },
+        "LOTTERY_ALTERNATE_LIST": {
+          "value": 29,
+          "hex": "0x1d"
+        },
+        "LOTTERY_GET_ITEM": {
+          "value": 30,
+          "hex": "0x1e"
+        },
+        "CADDY_SELL_ALL_GOODS": {
+          "value": 232,
+          "hex": "0xe8"
+        },
+        "CADDY_GET_AWARDS": {
+          "value": 245,
+          "hex": "0xf5"
+        },
+        "CADDY_GET_BADLUCK": {
+          "value": 45,
+          "hex": "0x2d"
+        },
+        "FEEDBACK_REPLY": {
+          "value": 213,
+          "hex": "0xd5"
+        },
+        "QUESTION_REPLY": {
+          "value": 89,
+          "hex": "0x59"
+        },
+        "ANSWERBOX_QUESTIN": {
+          "value": 31,
+          "hex": "0x1f"
+        },
+        "REQUEST_UPDATE": {
+          "value": 225,
+          "hex": "0xe1"
+        },
+        "VIP_RENEWAL": {
+          "value": 92,
+          "hex": "0x5c"
+        },
+        "USE_LOG": {
+          "value": 213,
+          "hex": "0xd5"
+        },
+        "LOAD_RESOURCE": {
+          "value": 223,
+          "hex": "0xdf"
+        },
+        "USER_GET_GIFTS": {
+          "value": 218,
+          "hex": "0xda"
+        },
+        "USER_SEND_GIFTS": {
+          "value": 221,
+          "hex": "0xdd"
+        },
+        "USER_UPDATE_GIFT": {
+          "value": 220,
+          "hex": "0xdc"
+        },
+        "USER_RELOAD_GIFT": {
+          "value": 214,
+          "hex": "0xd6"
+        },
+        "CARDS_DATA": {
+          "value": 216,
+          "hex": "0xd8"
+        },
+        "CARDS_UPDATE": {
+          "value": 500,
+          "hex": "0x1f4"
+        },
+        "CARD_RESET": {
+          "value": 196,
+          "hex": "0xc4"
+        },
+        "OPTION_UPDATE": {
+          "value": 64,
+          "hex": "0x40"
+        },
+        "GET_PLAYER_CARD": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "CHAT_FILTERING_FRIENDS_SHARE": {
+          "value": 17,
+          "hex": "0x11"
+        },
+        "FRIEND_BRITHDAY": {
+          "value": 223,
+          "hex": "0xdf"
+        },
+        "DAILYRECORD": {
+          "value": 103,
+          "hex": "0x67"
+        },
+        "COLLECTINFO": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "GOODS_EXCHANGE": {
+          "value": 31,
+          "hex": "0x1f"
+        },
+        "TEXP": {
+          "value": 99,
+          "hex": "0x63"
+        },
+        "IM_CMD": {
+          "value": 160,
+          "hex": "0xa0"
+        },
+        "LITTLEGAME_ACTIVED": {
+          "value": 80,
+          "hex": "0x50"
+        },
+        "OPEN_ALL_CARDBOX": {
+          "value": 204,
+          "hex": "0xcc"
+        },
+        "PICC": {
+          "value": 30,
+          "hex": "0x1e"
+        },
+        "ELITEGAME": {
+          "value": 162,
+          "hex": "0xa2"
+        },
+        "LEFT_GUN_ROULETTE": {
+          "value": 137,
+          "hex": "0x89"
+        },
+        "LEFT_GUN_ROULETTE_START": {
+          "value": 163,
+          "hex": "0xa3"
+        },
+        "LEFT_GUN_ROULETTE_SOCKET": {
+          "value": 128,
+          "hex": "0x80"
+        },
+        "LEFT_GUN_ROULETTE_COMPLETTE": {
+          "value": 130,
+          "hex": "0x82"
+        },
+        "WISHBEADEQUIP": {
+          "value": 106,
+          "hex": "0x6a"
+        },
+        "UPDATE_SHOP": {
+          "value": 109,
+          "hex": "0x6d"
+        },
+        "CARD_LOTTERY": {
+          "value": 104,
+          "hex": "0x68"
+        },
+        "LUCK_LOTTERY": {
+          "value": 105,
+          "hex": "0x69"
+        },
+        "LOTTERY_AWARD": {
+          "value": 251,
+          "hex": "0xfb"
+        },
+        "CAN_CARD_LOTTERY": {
+          "value": 93,
+          "hex": "0x5d"
+        },
+        "GOTO_CARD_LOTTERY": {
+          "value": 239,
+          "hex": "0xef"
+        },
+        "VIP_LEVELUP_AWARDS": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "NOVICEACTIVITY": {
+          "value": 258,
+          "hex": "0x102"
+        },
+        "FIRSTRECHARGE": {
+          "value": 259,
+          "hex": "0x103"
+        },
+        "INVITE_FRIEND": {
+          "value": 107,
+          "hex": "0x6b"
+        },
+        "PET": {
+          "value": 68,
+          "hex": "0x44"
+        },
+        "PET_GET_INFO": {
+          "value": 148,
+          "hex": "0x94"
+        },
+        "OPTION_CHANGE": {
+          "value": 158,
+          "hex": "0x9e"
+        },
+        "ITEM_ADVANCE": {
+          "value": 138,
+          "hex": "0x8a"
+        },
+        "LABYRINTH": {
+          "value": 131,
+          "hex": "0x83"
+        },
+        "TOTEM": {
+          "value": 136,
+          "hex": "0x88"
+        },
+        "HONOR_UP_COUNT": {
+          "value": 96,
+          "hex": "0x60"
+        },
+        "FIGHT_SPIRIT": {
+          "value": 209,
+          "hex": "0xd1"
+        },
+        "NEWCHICKENBOX_SYS": {
+          "value": 87,
+          "hex": "0x57"
+        },
+        "WONDERFUL_ACTIVITY": {
+          "value": 159,
+          "hex": "0x9f"
+        },
+        "WONDERFUL_GETREWARD": {
+          "value": 373,
+          "hex": "0x175"
+        },
+        "WONDERFUL_ACTIVITY_INIT": {
+          "value": 405,
+          "hex": "0x195"
+        },
+        "DICE_SYSTEM": {
+          "value": 134,
+          "hex": "0x86"
+        },
+        "SEARCH_GOODS": {
+          "value": 98,
+          "hex": "0x62"
+        },
+        "NECKLACE_STRENGTH": {
+          "value": 95,
+          "hex": "0x5f"
+        },
+        "ACCUMULATIVELOGIN_AWARD": {
+          "value": 238,
+          "hex": "0xee"
+        },
+        "WORLDBOSS_CMD": {
+          "value": 102,
+          "hex": "0x66"
+        },
+        "EVERYDAY_ACTIVEPOINT": {
+          "value": 155,
+          "hex": "0x9b"
+        },
+        "LATENT_ENERGY": {
+          "value": 133,
+          "hex": "0x85"
+        },
+        "ACTIVITY_SYSTEM": {
+          "value": 145,
+          "hex": "0x91"
+        },
+        "TRANSNATIONAL_BUYGOODS": {
+          "value": 156,
+          "hex": "0x9c"
+        },
+        "CONSUME_RANK": {
+          "value": 331,
+          "hex": "0x14b"
+        },
+        "RECHARGE_RANK": {
+          "value": 352,
+          "hex": "0x160"
+        },
+        "BATTLE_COMPANION_GIVE": {
+          "value": 101,
+          "hex": "0x65"
+        },
+        "AVATAR_COLLECTION": {
+          "value": 402,
+          "hex": "0x192"
+        },
+        "DRAGON_BOAT": {
+          "value": 332,
+          "hex": "0x14c"
+        },
+        "KING_BLESS_MAIN": {
+          "value": 142,
+          "hex": "0x8e"
+        },
+        "KING_BLESS_UPDATE_BUFF_DATA": {
+          "value": 143,
+          "hex": "0x8f"
+        },
+        "KING_BLESS_USE_ITEM": {
+          "value": 143,
+          "hex": "0x8f"
+        },
+        "LIMITED_CHARGE_ACTIVE": {
+          "value": 342,
+          "hex": "0x156"
+        },
+        "SEPARATE_ACTIVITY": {
+          "value": 343,
+          "hex": "0x157"
+        },
+        "NEW_QUEST": {
+          "value": 344,
+          "hex": "0x158"
+        },
+        "PHONE_REGISTER": {
+          "value": 345,
+          "hex": "0x159"
+        },
+        "PAY_CENTER_MESSAGE": {
+          "value": 266,
+          "hex": "0x10a"
+        },
+        "TIMEOUT_DC": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "RECONNECT": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "RECONNECT_CHANNEL": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "RECHARGE_OFFER": {
+          "value": 635,
+          "hex": "0x27b"
+        },
+        "DDPASS": {
+          "value": 441,
+          "hex": "0x1b9"
+        },
+        "DAILY_CHECKIN_AWARD": {
+          "value": 443,
+          "hex": "0x1bb"
+        },
+        "RESCUE": {
+          "value": 277,
+          "hex": "0x115"
+        },
+        "LOTTERY_TICKET": {
+          "value": 442,
+          "hex": "0x1ba"
+        },
+        "HEALTH": {
+          "value": 325,
+          "hex": "0x145"
+        },
+        "PLAYER_DRESS": {
+          "value": 333,
+          "hex": "0x14d"
+        },
+        "RANKED_INIT": {
+          "value": 700,
+          "hex": "0x2bc"
+        },
+        "RANKED_LEADERBOARD": {
+          "value": 701,
+          "hex": "0x2bd"
+        },
+        "RANKED_CLAIM_REWARD": {
+          "value": 702,
+          "hex": "0x2be"
+        },
+        "RANKED_MATCH_RESULT": {
+          "value": 703,
+          "hex": "0x2bf"
+        },
+        "RANKED_STATS": {
+          "value": 704,
+          "hex": "0x2c0"
+        },
+        "RANKED_SET_COSMETIC": {
+          "value": 705,
+          "hex": "0x2c1"
+        },
+        "RANKED_START_MATCH": {
+          "value": 706,
+          "hex": "0x2c2"
+        },
+        "RANKED_ELO_REWARD": {
+          "value": 707,
+          "hex": "0x2c3"
+        },
+        "BATTLE_PASS": {
+          "value": 448,
+          "hex": "0x1c0"
+        },
+        "CODEX": {
+          "value": 408,
+          "hex": "0x198"
+        },
+        "RELOAD_CLIENT_RESOURCE": {
+          "value": 1207,
+          "hex": "0x4b7"
+        },
+        "UNCLE_TONY": {
+          "value": 409,
+          "hex": "0x199"
+        }
+      }
+    },
+    "ddt/events/CrazyTankSocketEvent": {
+      "class_name": "CrazyTankSocketEvent",
+      "constants_count": 471,
+      "constants": {
+        "UPDATE_BUFF_LEVEL": {
+          "value": "UPDATE_BUFF_LEVEL",
+          "hex": null
+        },
+        "GAME_ROOM_FULL": {
+          "value": "gameRoomFull",
+          "hex": null
+        },
+        "POPUP_LEAGUESTART_NOTICE": {
+          "value": "popup_leagueStart_notice",
+          "hex": null
+        },
+        "LEFT_GUN_ROULETTE": {
+          "value": "left_gun_roulette",
+          "hex": null
+        },
+        "LEFT_GUN_ROULETTE_START": {
+          "value": "left_gun_roulette_start",
+          "hex": null
+        },
+        "USER_LUCKYNUM": {
+          "value": "userluckynum",
+          "hex": null
+        },
+        "LITTLEGAME_ACTIVED": {
+          "value": "littlegameactived",
+          "hex": null
+        },
+        "BAG_LOCKED": {
+          "value": "bagLocked",
+          "hex": null
+        },
+        "CONSORTIA_EQUIP_CONTROL": {
+          "value": "consortiaEquipControl",
+          "hex": null
+        },
+        "PLAYER_START_MOVE": {
+          "value": "playerStartMove",
+          "hex": null
+        },
+        "PLAYER_STOP_MOVE": {
+          "value": "playerStopMove",
+          "hex": null
+        },
+        "PLAY_FINISH": {
+          "value": "playeFinished",
+          "hex": null
+        },
+        "PLAYER_MOVE": {
+          "value": "playerMove",
+          "hex": null
+        },
+        "BOMB_DIE": {
+          "value": "bombDie",
+          "hex": null
+        },
+        "DAILY_AWARD": {
+          "value": "dailyAward",
+          "hex": null
+        },
+        "DIRECTION_CHANGED": {
+          "value": "playerDirection",
+          "hex": null
+        },
+        "CHANGE_BALL": {
+          "value": "changeBall",
+          "hex": null
+        },
+        "PLAYER_GUN_ANGLE": {
+          "value": "playerGunAngle",
+          "hex": null
+        },
+        "PLAYER_SHOOT": {
+          "value": "playerShoot",
+          "hex": null
+        },
+        "PLAYER_SHOOT_TAG": {
+          "value": "playerShootTag",
+          "hex": null
+        },
+        "PLAYER_BEAT": {
+          "value": "playerBeat",
+          "hex": null
+        },
+        "BOX_DISAPPEAR": {
+          "value": "boxdisappear",
+          "hex": null
+        },
+        "PLAYER_CHANGE": {
+          "value": "playerChange",
+          "hex": null
+        },
+        "PLAYER_BLOOD": {
+          "value": "playerBlood",
+          "hex": null
+        },
+        "PLAYER_FROST": {
+          "value": "playerFrost",
+          "hex": null
+        },
+        "PLAYER_INVINCIBLY": {
+          "value": "playerInvincibly",
+          "hex": null
+        },
+        "PLAYER_HIDE": {
+          "value": "playerHide",
+          "hex": null
+        },
+        "PLAYER_CARRY": {
+          "value": "playerCarry",
+          "hex": null
+        },
+        "PLAYER_BECKON": {
+          "value": "playerBeckon",
+          "hex": null
+        },
+        "PLAYER_NONOLE": {
+          "value": "playerNoNole",
+          "hex": null
+        },
+        "PLAYER_PROPERTY": {
+          "value": "playerProperty",
+          "hex": null
+        },
+        "CHANGE_STATE": {
+          "value": "changeState",
+          "hex": null
+        },
+        "PLAYER_VANE": {
+          "value": "playerVane",
+          "hex": null
+        },
+        "PLAYER_APK": {
+          "value": "playerAPK",
+          "hex": null
+        },
+        "PLAYER_PICK_BOX": {
+          "value": "playerPick",
+          "hex": null
+        },
+        "PLAYER_FIGHT_PROP": {
+          "value": "playerFightProp",
+          "hex": null
+        },
+        "PLAYER_STUNT": {
+          "value": "playerStunt",
+          "hex": null
+        },
+        "PLAYER_PROP": {
+          "value": "playerProp",
+          "hex": null
+        },
+        "PLAYER_DANDER": {
+          "value": "playerDander",
+          "hex": null
+        },
+        "REDUCE_DANDER": {
+          "value": "reduceDander",
+          "hex": null
+        },
+        "LOAD": {
+          "value": "load",
+          "hex": null
+        },
+        "PLAYER_ADDATTACK": {
+          "value": "playerAddAttack",
+          "hex": null
+        },
+        "PLAYER_ADDBAL": {
+          "value": "playerAddBall",
+          "hex": null
+        },
+        "SHOOTSTRAIGHT": {
+          "value": "shootStaight",
+          "hex": null
+        },
+        "SUICIDE": {
+          "value": "suicide",
+          "hex": null
+        },
+        "PING": {
+          "value": "ping",
+          "hex": null
+        },
+        "NETWORK": {
+          "value": "netWork",
+          "hex": null
+        },
+        "GAME_TAKE_TEMP": {
+          "value": "gameTakeTemp",
+          "hex": null
+        },
+        "CONNECT_SUCCESS": {
+          "value": "connectSuccess",
+          "hex": null
+        },
+        "RECONNECT_SUCCESS": {
+          "value": "reconnectSuccess",
+          "hex": null
+        },
+        "LOGIN": {
+          "value": "login",
+          "hex": null
+        },
+        "GAME_ROOM_CREATE": {
+          "value": "gameRoomCreate",
+          "hex": null
+        },
+        "GAME_ROOMLIST_UPDATE": {
+          "value": "gameRoomListUpdate",
+          "hex": null
+        },
+        "ROOMLIST_PASS": {
+          "value": "RoomListPass",
+          "hex": null
+        },
+        "SCENE_ADD_USER": {
+          "value": "sceneAddUser",
+          "hex": null
+        },
+        "BULK_SCENE_ADD_USER": {
+          "value": "bulkSceneAddUser",
+          "hex": null
+        },
+        "GAME_PLAYER_ENTER": {
+          "value": "gamePlayerEnter",
+          "hex": null
+        },
+        "KIT_USER": {
+          "value": "kitUser",
+          "hex": null
+        },
+        "UPDATE_PRIVATE_INFO": {
+          "value": "updateAllSorce",
+          "hex": null
+        },
+        "QQTIPS_GET_INFO": {
+          "value": "QQTIPSGETINFO",
+          "hex": null
+        },
+        "EDICTUM_GET_VERSION": {
+          "value": "edictum_get_version",
+          "hex": null
+        },
+        "GAME_ROOM_UPDATE_PLACE": {
+          "value": "gameRoomOpen",
+          "hex": null
+        },
+        "GAME_ROOM_KICK": {
+          "value": "gameRoomKick",
+          "hex": null
+        },
+        "GAME_PLAYER_EXIT": {
+          "value": "GamePlayerExit",
+          "hex": null
+        },
+        "GAME_WAIT_RECV": {
+          "value": "recvGameWait",
+          "hex": null
+        },
+        "GAME_WAIT_FAILED": {
+          "value": "GameWaitFailed",
+          "hex": null
+        },
+        "GAME_AWIT_CANCEL": {
+          "value": "GameWaitCancel",
+          "hex": null
+        },
+        "GMAE_STYLE_RECV": {
+          "value": "GameStyleRecv",
+          "hex": null
+        },
+        "GAME_ROOM_LOGIN": {
+          "value": "gameLogin",
+          "hex": null
+        },
+        "GAME_TEAM": {
+          "value": "gameTeam",
+          "hex": null
+        },
+        "GAME_PLAYER_STATE_CHANGE": {
+          "value": "playerState",
+          "hex": null
+        },
+        "GAME_CREATE": {
+          "value": "gameCreate",
+          "hex": null
+        },
+        "GAME_START": {
+          "value": "gameStart",
+          "hex": null
+        },
+        "GAME_LOAD": {
+          "value": "gameLoad",
+          "hex": null
+        },
+        "GAME_MISSION_INFO": {
+          "value": "gameMissionInfo",
+          "hex": null
+        },
+        "SCENE_CHANNEL_CHANGE": {
+          "value": "sceneChannelChange",
+          "hex": null
+        },
+        "SCENE_CHAT": {
+          "value": "scenechat",
+          "hex": null
+        },
+        "SCENE_FACE": {
+          "value": "sceneface",
+          "hex": null
+        },
+        "SCENE_REMOVE_USER": {
+          "value": "sceneRemoveUser",
+          "hex": null
+        },
+        "DELETE_GOODS": {
+          "value": "deletegoods",
+          "hex": null
+        },
+        "BUY_GOODS": {
+          "value": "buygoods",
+          "hex": null
+        },
+        "BUY_BEAD": {
+          "value": "buybead",
+          "hex": null
+        },
+        "CHANGE_GOODS_PLACE": {
+          "value": "changegoodsplace",
+          "hex": null
+        },
+        "BREAK_GOODS": {
+          "value": "breakgoods",
+          "hex": null
+        },
+        "CHAIN_EQUIP": {
+          "value": "chainequip",
+          "hex": null
+        },
+        "UNCHAIN_EQUIP": {
+          "value": "unchainequip",
+          "hex": null
+        },
+        "SELL_GOODS": {
+          "value": "sellgoods",
+          "hex": null
+        },
+        "REPAIR_GOODS": {
+          "value": "repairGoods",
+          "hex": null
+        },
+        "SEND_EMAIL": {
+          "value": "sendEmail",
+          "hex": null
+        },
+        "DELETE_MAIL": {
+          "value": "deleteMail",
+          "hex": null
+        },
+        "GET_MAIL_ATTACHMENT": {
+          "value": "getMailAttachment",
+          "hex": null
+        },
+        "MAIL_CANCEL": {
+          "value": "mailCancel",
+          "hex": null
+        },
+        "MAIL_RESPONSE": {
+          "value": "mailResponse",
+          "hex": null
+        },
+        "CONSORTION_MAIL": {
+          "value": "consortionMail",
+          "hex": null
+        },
+        "GRID_PROP": {
+          "value": "gridProp",
+          "hex": null
+        },
+        "GRID_GOODS": {
+          "value": "gridgoods",
+          "hex": null
+        },
+        "UPDATE_COUPONS": {
+          "value": "updateCoupons",
+          "hex": null
+        },
+        "UPDATE_OFFER": {
+          "value": "updateoffer",
+          "hex": null
+        },
+        "ITEM_STORE": {
+          "value": "itemStore",
+          "hex": null
+        },
+        "CHECK_CODE": {
+          "value": "checkCode",
+          "hex": null
+        },
+        "GET_DYNAMIC": {
+          "value": "get_dynamic",
+          "hex": null
+        },
+        "IS_LAST_MISSION": {
+          "value": "islastMission",
+          "hex": null
+        },
+        "PASSED_WARRIORSARENA_10": {
+          "value": "passed_warriorsarena_10",
+          "hex": null
+        },
+        "LAST_MISSION_FOR_WARRIORSARENA": {
+          "value": "warriorsarenaLastMission",
+          "hex": null
+        },
+        "No_WARRIORSARENA_TICKET": {
+          "value": "no_Warriorsarena_ticket",
+          "hex": null
+        },
+        "CONSORTIA_RESPONSE": {
+          "value": "consortiaresponse",
+          "hex": null
+        },
+        "CONSORTIA_USER_GRADE_UPDATE": {
+          "value": "consortiagradeuodateevent",
+          "hex": null
+        },
+        "CONSORTIA_CREATE": {
+          "value": "consortiacreateevent",
+          "hex": null
+        },
+        "CONSORTIA_TRYIN": {
+          "value": "consortiatryinevent",
+          "hex": null
+        },
+        "CONSORTIA_TRYIN_DEL": {
+          "value": "consortiatryindelevent",
+          "hex": null
+        },
+        "CONSORTIA_PLACARD_UPDATE": {
+          "value": "consortiaPlacardUpdate",
+          "hex": null
+        },
+        "CONSORTIA_DESCRIPTION_UPDATE": {
+          "value": "consortiadescriptionupdate",
+          "hex": null
+        },
+        "CONSORTIA_DISBAND": {
+          "value": "consortiadisbandevent",
+          "hex": null
+        },
+        "CONSORTIA_APPLY_STATE": {
+          "value": "consortiaapplystateevent",
+          "hex": null
+        },
+        "CONSORTIA_INVITE_PASS": {
+          "value": "consortiainvatepassevent",
+          "hex": null
+        },
+        "CONSORTIA_INVITE": {
+          "value": "consortiainvateevent",
+          "hex": null
+        },
+        "CONSORTIA_RENEGADE": {
+          "value": "consortiarenegadeevent",
+          "hex": null
+        },
+        "CONSORTIA_DUTY_DELETE": {
+          "value": "consortiadutydeleteevent",
+          "hex": null
+        },
+        "CONSORTIA_DUTY_UPDATE": {
+          "value": "consortiadutyupdateevent",
+          "hex": null
+        },
+        "CONSORTIA_BANCHAT_UPDATE": {
+          "value": "consortiabanchatupdateevent",
+          "hex": null
+        },
+        "CONSORTIA_USER_REMARK_UPDATE": {
+          "value": "consortiauserremarkupdateevent",
+          "hex": null
+        },
+        "CONSORTIA_CHAT": {
+          "value": "consortiachatevent",
+          "hex": null
+        },
+        "CONSORTIA_ALLY_APPLY_UPDATE": {
+          "value": "consortiaAllyAppleUpdate",
+          "hex": null
+        },
+        "CONSORTIA_ALLY_UPDATE": {
+          "value": "consortiaallyupdate",
+          "hex": null
+        },
+        "CONSORTIA_ALLY_APPLY_DELETE": {
+          "value": "consortiaallyapplydelete",
+          "hex": null
+        },
+        "CONSORTIA_ALLY_APPLY_ADD": {
+          "value": "consortiaallyapplyadd",
+          "hex": null
+        },
+        "CONSORTIA_LEVEL_UP": {
+          "value": "consortialevelup",
+          "hex": null
+        },
+        "CONSORTIA_CHAIRMAN_CHAHGE": {
+          "value": "consortiachairmanchange",
+          "hex": null
+        },
+        "CONSORTIA_TRYIN_PASS": {
+          "value": "consortiatryinpass",
+          "hex": null
+        },
+        "CONSORTIA_RICHES_OFFER": {
+          "value": "consortiaRichesOffer",
+          "hex": null
+        },
+        "CONSORTIA_MAIL_MESSAGE": {
+          "value": "consortiaMailMessage",
+          "hex": null
+        },
+        "BUY_BADGE": {
+          "value": "buyBadge",
+          "hex": null
+        },
+        "GAME_OVER": {
+          "value": "gameOver",
+          "hex": null
+        },
+        "MISSION_OVE": {
+          "value": "missionOver",
+          "hex": null
+        },
+        "MISSION_COMPLETE": {
+          "value": "missionOver",
+          "hex": null
+        },
+        "GAME_ALL_MISSION_OVER": {
+          "value": "gameAllMissionOver",
+          "hex": null
+        },
+        "GAME_TAKE_OUT": {
+          "value": "gameTakeOut",
+          "hex": null
+        },
+        "GAME_ROOM_SETUP_CHANGE": {
+          "value": "gameRoomSetUp",
+          "hex": null
+        },
+        "EQUIP_CHANGE": {
+          "value": "equipchange",
+          "hex": null
+        },
+        "MARRYINFO_GET": {
+          "value": "marryinfoget",
+          "hex": null
+        },
+        "AMARRYINFO_REFRESH": {
+          "value": "amarryinforefresh",
+          "hex": null
+        },
+        "ITEM_ADVANCE": {
+          "value": "itemAdvance",
+          "hex": null
+        },
+        "GAME_OPEN_SELECT_LEADER": {
+          "value": "gameOpenSelectLeader",
+          "hex": null
+        },
+        "GAME_WANNA_LEADER": {
+          "value": "gameWannaLeader",
+          "hex": null
+        },
+        "GAME_CAPTAIN_CHOICE": {
+          "value": "gamecaptionchoice",
+          "hex": null
+        },
+        "GAME_CAPTAIN_AFFIRM": {
+          "value": "gamecaptainaffirm",
+          "hex": null
+        },
+        "SCENE_USERS_LIST": {
+          "value": "sceneuserlist",
+          "hex": null
+        },
+        "GAME_INVITE": {
+          "value": "gameinvite",
+          "hex": null
+        },
+        "UPDATE_PLAYER_INFO": {
+          "value": "updatestyle",
+          "hex": null
+        },
+        "TEMP_STYLE": {
+          "value": "tempStyle",
+          "hex": null
+        },
+        "S_BUGLE": {
+          "value": "sbugle",
+          "hex": null
+        },
+        "B_BUGLE": {
+          "value": "bbugle",
+          "hex": null
+        },
+        "C_BUGLE": {
+          "value": "cbugle",
+          "hex": null
+        },
+        "CHAT_PERSONAL": {
+          "value": "chatpersonal",
+          "hex": null
+        },
+        "FRIEND_ADD": {
+          "value": "friendAdd",
+          "hex": null
+        },
+        "FRIEND_REMOVE": {
+          "value": "friendremove",
+          "hex": null
+        },
+        "FRIEND_UPDATE": {
+          "value": "friendupdate",
+          "hex": null
+        },
+        "FRIEND_STATE": {
+          "value": "friendstate",
+          "hex": null
+        },
+        "ITEM_COMPOSE": {
+          "value": "itemCompose",
+          "hex": null
+        },
+        "ITEM_STRENGTH": {
+          "value": "itemstrength",
+          "hex": null
+        },
+        "ITEM_TRANSFER": {
+          "value": "itemtransfer",
+          "hex": null
+        },
+        "DEFY_AFFICHE": {
+          "value": "DefyAffiche",
+          "hex": null
+        },
+        "ITEM_FUSION": {
+          "value": "itemfusion",
+          "hex": null
+        },
+        "ITEM_FUSION_PREVIEW": {
+          "value": "itemfusionpreview",
+          "hex": null
+        },
+        "ITEM_REFINERY_PREVIEW": {
+          "value": "itemRefineryPreview",
+          "hex": null
+        },
+        "ITEM_REFINERY": {
+          "value": "itemRefinery",
+          "hex": null
+        },
+        "ITEM_EMBED": {
+          "value": "itemEmbed",
+          "hex": null
+        },
+        "OPEN_FIVE_SIX_HOLE_EMEBED": {
+          "value": "open_five_six_hole_embed",
+          "hex": null
+        },
+        "CLEAR_STORE_BAG": {
+          "value": "clearStoreBag",
+          "hex": null
+        },
+        "SYS_CHAT_DATA": {
+          "value": "syschatdata",
+          "hex": null
+        },
+        "SYS_NOTICE": {
+          "value": "sysnotice",
+          "hex": null
+        },
+        "ITEM_CONTINUE": {
+          "value": "itemContinue",
+          "hex": null
+        },
+        "ITEM_EQUIP": {
+          "value": "itemEquip",
+          "hex": null
+        },
+        "FRIEND_RESPONSE": {
+          "value": "friendresponse",
+          "hex": null
+        },
+        "ITEM_OBTAIN": {
+          "value": "itemObtain",
+          "hex": null
+        },
+        "SYS_DATE": {
+          "value": "sysDate",
+          "hex": null
+        },
+        "QUEST_UPDATE": {
+          "value": "quiestUpdate",
+          "hex": null
+        },
+        "QUEST_OBTAIN": {
+          "value": "quiestObtain",
+          "hex": null
+        },
+        "QUEST_CHECK": {
+          "value": "quiestCheck",
+          "hex": null
+        },
+        "QUEST_FINISH": {
+          "value": "quiestFinish",
+          "hex": null
+        },
+        "AUCTION_DELETE": {
+          "value": "auctionDelete",
+          "hex": null
+        },
+        "AUCTION_UPDATE": {
+          "value": "auctionUpdate",
+          "hex": null
+        },
+        "AUCTION_ADD": {
+          "value": "auctionAdd",
+          "hex": null
+        },
+        "AUCTION_REFRESH": {
+          "value": "auctionRefresh",
+          "hex": null
+        },
+        "CID_CHECK": {
+          "value": "CIDCheck",
+          "hex": null
+        },
+        "ENTHRALL_LIGHT": {
+          "value": "CIDInfo",
+          "hex": null
+        },
+        "BUFF_INFO": {
+          "value": "buffInfo",
+          "hex": null
+        },
+        "BUFF_OBTAIN": {
+          "value": "buffObtain",
+          "hex": null
+        },
+        "BUFF_ADD": {
+          "value": "buffAdd",
+          "hex": null
+        },
+        "BUFF_UPDATE": {
+          "value": "buffUpdate",
+          "hex": null
+        },
+        "USE_COLOR_CARD": {
+          "value": "useColorCard",
+          "hex": null
+        },
+        "USE_COLOR_SHELL": {
+          "value": "useColorShell",
+          "hex": null
+        },
+        "MARRY_ROOM_CREATE": {
+          "value": "marry room create",
+          "hex": null
+        },
+        "MARRY_ROOM_LOGIN": {
+          "value": "marry room login",
+          "hex": null
+        },
+        "MARRY_SCENE_LOGIN": {
+          "value": "marry scene login",
+          "hex": null
+        },
+        "MARRY_SCENE_CHANGE": {
+          "value": "marry scene change",
+          "hex": null
+        },
+        "PLAYER_ENTER_MARRY_ROOM": {
+          "value": "player enter room",
+          "hex": null
+        },
+        "PLAYER_EXIT_MARRY_ROOM": {
+          "value": "exit marry room",
+          "hex": null
+        },
+        "MARRY_APPLY": {
+          "value": "marray apply",
+          "hex": null
+        },
+        "MARRY_APPLY_REPLY": {
+          "value": "marry apply reply",
+          "hex": null
+        },
+        "DIVORCE_APPLY": {
+          "value": "divorce apply",
+          "hex": null
+        },
+        "MARRY_STATUS": {
+          "value": "marry status",
+          "hex": null
+        },
+        "MOVE": {
+          "value": "church move",
+          "hex": null
+        },
+        "HYMENEAL": {
+          "value": "hymeneal",
+          "hex": null
+        },
+        "CONTINUATION": {
+          "value": "church continuation",
+          "hex": null
+        },
+        "INVITE": {
+          "value": "church invite",
+          "hex": null
+        },
+        "LARGESS": {
+          "value": "church largess",
+          "hex": null
+        },
+        "USEFIRECRACKERS": {
+          "value": "use firecrackers",
+          "hex": null
+        },
+        "KICK": {
+          "value": "church kick",
+          "hex": null
+        },
+        "FORBID": {
+          "value": "church forbid",
+          "hex": null
+        },
+        "MARRY_ROOM_STATE": {
+          "value": "marry room state",
+          "hex": null
+        },
+        "HYMENEAL_STOP": {
+          "value": "hymeneal stop",
+          "hex": null
+        },
+        "MARRY_ROOM_DISPOSE": {
+          "value": "marry room dispose",
+          "hex": null
+        },
+        "MARRY_ROOM_UPDATE": {
+          "value": "marry room update",
+          "hex": null
+        },
+        "MARRYPROP_GET": {
+          "value": "marryprop get",
+          "hex": null
+        },
+        "GUNSALUTE": {
+          "value": "Gun Salute",
+          "hex": null
+        },
+        "MATE_ONLINE_TIME": {
+          "value": "Mate_Online_Time",
+          "hex": null
+        },
+        "MARRYROOMSENDGIFT": {
+          "value": "marryRoomSendGift",
+          "hex": null
+        },
+        "MARRYINFO_UPDATE": {
+          "value": "marryinfo update",
+          "hex": null
+        },
+        "MARRYINFO_ADD": {
+          "value": "marryInfo add",
+          "hex": null
+        },
+        "PLAY_MOVIE": {
+          "value": "playMovie",
+          "hex": null
+        },
+        "ADD_LIVING": {
+          "value": "addLiving",
+          "hex": null
+        },
+        "ADD_MAP_THINGS": {
+          "value": "addMapThing",
+          "hex": null
+        },
+        "LIVING_MOVETO": {
+          "value": "livingMoveTo",
+          "hex": null
+        },
+        "LIVING_FALLING": {
+          "value": "livingFalling",
+          "hex": null
+        },
+        "LIVING_JUMP": {
+          "value": "livingJump",
+          "hex": null
+        },
+        "LIVING_BEAT": {
+          "value": "livingBeat",
+          "hex": null
+        },
+        "LIVING_SAY": {
+          "value": "livingSay",
+          "hex": null
+        },
+        "LIVING_RANGEATTACKING": {
+          "value": "livingRangeAttacking",
+          "hex": null
+        },
+        "BARRIER_INFO": {
+          "value": "barrierInfo",
+          "hex": null
+        },
+        "ADD_MAP_THING": {
+          "value": "addMapThing",
+          "hex": null
+        },
+        "UPDATE_BOARD_STATE": {
+          "value": "updateBoardState",
+          "hex": null
+        },
+        "GAME_MISSION_START": {
+          "value": "gameMissionStart",
+          "hex": null
+        },
+        "GAME_MISSION_PREPARE": {
+          "value": "gameMissionPrepare",
+          "hex": null
+        },
+        "SHOW_CARDS": {
+          "value": "showCard",
+          "hex": null
+        },
+        "UPDATE_BUFF": {
+          "value": "updateBuff",
+          "hex": null
+        },
+        "GEM_GLOW": {
+          "value": "gemGlow",
+          "hex": null
+        },
+        "LINKGOODSINFO_GET": {
+          "value": "linkGoodsInfo",
+          "hex": null
+        },
+        "FOCUS_ON_OBJECT": {
+          "value": "focusOnObject",
+          "hex": null
+        },
+        "GAME_ROOM_INFO": {
+          "value": "gameRoomInfo",
+          "hex": null
+        },
+        "ADD_TIP_LAYER": {
+          "value": "addTipLayer",
+          "hex": null
+        },
+        "PLAY_INFO_IN_GAME": {
+          "value": "playInfoInGame",
+          "hex": null
+        },
+        "PAYMENT_TAKE_CARD": {
+          "value": "playmentTakeCard",
+          "hex": null
+        },
+        "INSUFFICIENT_MONEY": {
+          "value": "insufficientMoney",
+          "hex": null
+        },
+        "GAME_MISSION_TRY_AGAIN": {
+          "value": "gameMissionTryAgain",
+          "hex": null
+        },
+        "GET_ITEM_MESS": {
+          "value": "getItemMess",
+          "hex": null
+        },
+        "USER_ANSWER": {
+          "value": "userAnswer",
+          "hex": null
+        },
+        "PLAY_SOUND": {
+          "value": "playSound",
+          "hex": null
+        },
+        "LOAD_RESOURCE": {
+          "value": "loadResource",
+          "hex": null
+        },
+        "PLAY_ASIDE": {
+          "value": "playWordTip",
+          "hex": null
+        },
+        "FORBID_DRAG": {
+          "value": "forbidDrag",
+          "hex": null
+        },
+        "TOP_LAYER": {
+          "value": "topLayer",
+          "hex": null
+        },
+        "GOODS_PRESENT": {
+          "value": "goodsPresents",
+          "hex": null
+        },
+        "GOODS_COUNT": {
+          "value": "goodsCount",
+          "hex": null
+        },
+        "CONTROL_BGM": {
+          "value": "controlBGM",
+          "hex": null
+        },
+        "FIGHT_LIB_INFO_CHANGE": {
+          "value": "fightLibInfoChange",
+          "hex": null
+        },
+        "USE_DEPUTY_WEAPON": {
+          "value": "Use_Deputy_Weapon",
+          "hex": null
+        },
+        "POPUP_QUESTION_FRAME": {
+          "value": "popupQuestionFrame",
+          "hex": null
+        },
+        "SHOW_PASS_STORY_BTN": {
+          "value": "showPassStoryBtn",
+          "hex": null
+        },
+        "LIVING_BOLTMOVE": {
+          "value": "livingBoltmove",
+          "hex": null
+        },
+        "CHANGE_TARGET": {
+          "value": "changeTarget",
+          "hex": null
+        },
+        "LIVING_SHOW_BLOOD": {
+          "value": "livingShowBlood",
+          "hex": null
+        },
+        "ACTION_MAPPING": {
+          "value": "actionMapping",
+          "hex": null
+        },
+        "FIGHT_ACHIEVEMENT": {
+          "value": "fightAchievement",
+          "hex": null
+        },
+        "APPLYSKILL": {
+          "value": "applySkill",
+          "hex": null
+        },
+        "REMOVESKILL": {
+          "value": "removeSkill",
+          "hex": null
+        },
+        "CHANGEMAXFORCE": {
+          "value": "changedMaxForce",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_CREATE": {
+          "value": "hotSpringRoomCreate",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_ADD_OR_UPDATE": {
+          "value": "hotSpringListRoomAddOrUpdate",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_REMOVE": {
+          "value": "hotSpringRoomRemove",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_LIST_GET": {
+          "value": "hotSpringRoomListGet",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_ENTER": {
+          "value": "hotSpringRoomEnter",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_PLAYER_ADD": {
+          "value": "hotSpringRoomPlayerAdd",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_PLAYER_REMOVE": {
+          "value": "hotSpringRoomPlayerRemove",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_PLAYER_REMOVE_NOTICE": {
+          "value": "hotSpringRoomPlayerRemoveNotice",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_PLAYER_TARGET_POINT": {
+          "value": "hotSpringRoomPlayerTargetPoint",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_RENEWAL_FEE": {
+          "value": "hotSpringRoomRenewalFee",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_INVITE": {
+          "value": "hotSpringRoomInvite",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_TIME_UPDATE": {
+          "value": "hotSpringRoomTimeUpdate",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_ENTER_CONFIRM": {
+          "value": "hotSpringRoomEnterConfirm",
+          "hex": null
+        },
+        "HOTSPRING_ROOM_PLAYER_CONTINUE": {
+          "value": "hotSpringRoomPlayerContinue",
+          "hex": null
+        },
+        "GET_TIME_BOX": {
+          "value": "getTimeBox",
+          "hex": null
+        },
+        "ACHIEVEMENT_UPDATE": {
+          "value": "achievementUpdate",
+          "hex": null
+        },
+        "ACHIEVEMENT_FINISH": {
+          "value": "achievementFinish",
+          "hex": null
+        },
+        "ACHIEVEMENT_INIT": {
+          "value": "achievementInit",
+          "hex": null
+        },
+        "ACHIEVEMENTDATA_INIT": {
+          "value": "achievementDateInit",
+          "hex": null
+        },
+        "USER_RANK": {
+          "value": "userRank",
+          "hex": null
+        },
+        "FIGHT_NPC": {
+          "value": "fightNpc",
+          "hex": null
+        },
+        "FEEDBACK_REPLY": {
+          "value": "feedbackReply",
+          "hex": null
+        },
+        "LOTTERY_ALTERNATE_LIST": {
+          "value": "lottery_alternate_list",
+          "hex": null
+        },
+        "LOTTERY_GET_ITEM": {
+          "value": "lottery_get_item",
+          "hex": null
+        },
+        "LOTTERY_OPNE": {
+          "value": "lottery_open",
+          "hex": null
+        },
+        "CADDY_GET_AWARDS": {
+          "value": "caddy_get_awards",
+          "hex": null
+        },
+        "CADDY_GET_BADLUCK": {
+          "value": "caddy_get_badLuck",
+          "hex": null
+        },
+        "OFFERPACK_COMPLETE": {
+          "value": "offer_pack_complete",
+          "hex": null
+        },
+        "LOOKUP_EFFORT": {
+          "value": "lookupEffort",
+          "hex": null
+        },
+        "ANSWERBOX_QUESTIN": {
+          "value": "AnswerBoxQuestion",
+          "hex": null
+        },
+        "VIP_IS_OPENED": {
+          "value": "vipIsOpened",
+          "hex": null
+        },
+        "VIP_LEVELUP": {
+          "value": "vipLevelUp",
+          "hex": null
+        },
+        "VIP_REWARD_IS_TAKED": {
+          "value": "vipRewardIsTaked",
+          "hex": null
+        },
+        "ITEM_OPENUP": {
+          "value": "ITEM_OPENUP",
+          "hex": null
+        },
+        "USER_GET_GIFTS": {
+          "value": "getGifts",
+          "hex": null
+        },
+        "USER_SEND_GIFTS": {
+          "value": "sendGift",
+          "hex": null
+        },
+        "USER_UPDATE_GIFT": {
+          "value": "upDateGift",
+          "hex": null
+        },
+        "USER_RELOAD_GIFT": {
+          "value": "userReloadGift",
+          "hex": null
+        },
+        "WEEKLY_CLICK_CNT": {
+          "value": "weeklyClickCnt",
+          "hex": null
+        },
+        "ACTIVE_PULLDOWN": {
+          "value": "ACTIVE_PULLDOWN",
+          "hex": null
+        },
+        "APPRENTICE_SYSTEM_ANSWER": {
+          "value": "ApprenticeSystemAnswer",
+          "hex": null
+        },
+        "CARDS_DATA": {
+          "value": "cards_data",
+          "hex": null
+        },
+        "CARDS_UPDATE": {
+          "value": "cards_update",
+          "hex": null
+        },
+        "CARD_RESET": {
+          "value": "card_reset",
+          "hex": null
+        },
+        "CHAT_FILTERING_FRIENDS_SHARE": {
+          "value": "chatFilteringFriendsShare",
+          "hex": null
+        },
+        "POLL_CANDIDATE": {
+          "value": "pollCandidate",
+          "hex": null
+        },
+        "SKILL_SOCKET": {
+          "value": "skillSocket",
+          "hex": null
+        },
+        "CONSORTIA_TASK_RELEASE": {
+          "value": "consortia_task_release",
+          "hex": null
+        },
+        "ONS_EQUIP": {
+          "value": "onsItemEquip",
+          "hex": null
+        },
+        "DAILYRECORD": {
+          "value": "dailyRecord",
+          "hex": null
+        },
+        "GAMESYSMESSAGE": {
+          "value": "gamesysmessage",
+          "hex": null
+        },
+        "ADD_ANIMATION": {
+          "value": "add_animation",
+          "hex": null
+        },
+        "WINDPIC": {
+          "value": "windPic",
+          "hex": null
+        },
+        "SAME_CITY_FRIEND": {
+          "value": "sameCityFriend",
+          "hex": null
+        },
+        "ADD_CUSTOM_FRIENDS": {
+          "value": "addCustomFriends",
+          "hex": null
+        },
+        "ONE_ON_ONE_TALK": {
+          "value": "oneOnoneTalk",
+          "hex": null
+        },
+        "TEXP": {
+          "value": "texp",
+          "hex": null
+        },
+        "ELITE_MATCH_TYPE": {
+          "value": "eliteMatchType",
+          "hex": null
+        },
+        "ELITE_MATCH_RANK_START": {
+          "value": "eliteMatchRankStart",
+          "hex": null
+        },
+        "ELITE_MATCH_PLAYER_RANK": {
+          "value": "eliteMatchPlayerRank",
+          "hex": null
+        },
+        "ELITE_MATCH_RANK_DETAIL": {
+          "value": "eliteMatchRankDetail",
+          "hex": null
+        },
+        "ELITE_MATCH_PENDING": {
+          "value": "eliteMatchPending",
+          "hex": null
+        },
+        "LIVING_CHAGEANGLE": {
+          "value": "LivingChangeAngele",
+          "hex": null
+        },
+        "LUCKY_LOTTERY": {
+          "value": "luckyLottery",
+          "hex": null
+        },
+        "GOTO_CARD_LOTTERY": {
+          "value": "gotoCardLottery",
+          "hex": null
+        },
+        "WISHBEADEQUIP": {
+          "value": "wishbeadequip",
+          "hex": null
+        },
+        "FIRSTRECHARGE_MESSAGE": {
+          "value": "firstrecharge_message",
+          "hex": null
+        },
+        "NOVICEACTIVITY_MESSAGE": {
+          "value": "noviceactivity_message",
+          "hex": null
+        },
+        "REALlTIMES_ITEMS_BY_DISCOUNT": {
+          "value": "RealTimesItemsByDisCount",
+          "hex": null
+        },
+        "INVITEFRIEND": {
+          "value": "inviteFriend",
+          "hex": null
+        },
+        "OPTION_CHANGE": {
+          "value": "optionChange",
+          "hex": null
+        },
+        "DEL_PET_EQUIP": {
+          "value": "del_pet_equip",
+          "hex": null
+        },
+        "ADD_PET_EQUIP": {
+          "value": "add_pet_equip",
+          "hex": null
+        },
+        "PET_RISINGSTAR": {
+          "value": "pet_risingStar",
+          "hex": null
+        },
+        "PET_EVOLUTION": {
+          "value": "pet_evolution",
+          "hex": null
+        },
+        "UPDATE_PET": {
+          "value": "updatePet",
+          "hex": null
+        },
+        "NECKLACE_STRENGTH": {
+          "value": "necklaceStrength",
+          "hex": null
+        },
+        "PET_EAT": {
+          "value": "pet_eat",
+          "hex": null
+        },
+        "PET_FORMINFO": {
+          "value": "pet_formInfo",
+          "hex": null
+        },
+        "REFRESH_PET": {
+          "value": "refreshPet",
+          "hex": null
+        },
+        "ADD_PET": {
+          "value": "addPet",
+          "hex": null
+        },
+        "PET_FOLLOW": {
+          "value": "pet_follow",
+          "hex": null
+        },
+        "PET_WAKE": {
+          "value": "pet_wake",
+          "hex": null
+        },
+        "PET_SKILL_CD": {
+          "value": "petSkillCD",
+          "hex": null
+        },
+        "PLAYER_PET_INFO": {
+          "value": "player_pet_info",
+          "hex": null
+        },
+        "ROUND_ONE_END": {
+          "value": "roundOneEnd",
+          "hex": null
+        },
+        "USE_PET_SKILL": {
+          "value": "usePetSkill",
+          "hex": null
+        },
+        "PET_BEAT": {
+          "value": "petBeat",
+          "hex": null
+        },
+        "PET_BUFF": {
+          "value": "petBuff",
+          "hex": null
+        },
+        "PICK_BOX": {
+          "value": "PickBox",
+          "hex": null
+        },
+        "SKIPNEXT": {
+          "value": "gameSkipNext",
+          "hex": null
+        },
+        "HONOR_UP_COUNT": {
+          "value": "honor_up_count",
+          "hex": null
+        },
+        "TOTEM": {
+          "value": "totem",
+          "hex": null
+        },
+        "FIGHT_SPIRIT": {
+          "value": "fight_spirit",
+          "hex": null
+        },
+        "PLAYER_FIGHT_SPIRIT_UP": {
+          "value": "player_fight_spirit_up",
+          "hex": null
+        },
+        "FIGHT_SPIRIT_INIT": {
+          "value": "fight_spirit_init",
+          "hex": null
+        },
+        "NEWCHICKENBOX_OPEN": {
+          "value": "newchickenbox_open",
+          "hex": null
+        },
+        "NEWCHICKENBOX_CLOSE": {
+          "value": "newchickenbox_close",
+          "hex": null
+        },
+        "GET_NEWCHICKENBOX_LIST": {
+          "value": "get_newchickenbox_list",
+          "hex": null
+        },
+        "NEWCHICKENBOX_OPEN_CARD": {
+          "value": "newchickenbox_open_card",
+          "hex": null
+        },
+        "NEWCHICKENBOX_OPEN_EYE": {
+          "value": "newchickenbox_open_eye",
+          "hex": null
+        },
+        "CANCLICKCARDENABLE": {
+          "value": "canclickcard",
+          "hex": null
+        },
+        "OVERSHOWITEMS": {
+          "value": "overshowitems",
+          "hex": null
+        },
+        "WONDERFUL_ACTIVITY": {
+          "value": "wonderfulActivity",
+          "hex": null
+        },
+        "WONDERFUL_ACTIVITY_INIT": {
+          "value": "wonderfulActivityInit",
+          "hex": null
+        },
+        "DICE_ACTIVE_OPEN": {
+          "value": "dice_active_open",
+          "hex": null
+        },
+        "DICE_ACTIVE_CLOSE": {
+          "value": "dice_active_close",
+          "hex": null
+        },
+        "DICE_RECEIVE_DATA": {
+          "value": "dice_receive_data",
+          "hex": null
+        },
+        "DICE_RECEIVE_RESULT": {
+          "value": "dice_receive_result",
+          "hex": null
+        },
+        "DICE_START": {
+          "value": "dice_start",
+          "hex": null
+        },
+        "PlayerRollDice": {
+          "value": "buried_RollDice",
+          "hex": null
+        },
+        "LUCKYSTAR_OPEN": {
+          "value": "luckystaropen",
+          "hex": null
+        },
+        "LUCKYSTAR_END": {
+          "value": "luckystarend",
+          "hex": null
+        },
+        "LUCKYSTAR_ALLGOODS": {
+          "value": "luckystarallgoods",
+          "hex": null
+        },
+        "LUCKYSTAR_RECORD": {
+          "value": "luckystarrecord",
+          "hex": null
+        },
+        "LUCKYSTAR_GOODSINFO": {
+          "value": "luckystargoodsinfo",
+          "hex": null
+        },
+        "LUCKYSTAR_REWARDINFO": {
+          "value": "luckystarrewardinfo",
+          "hex": null
+        },
+        "LUCKYSTAR_AWARDRANK": {
+          "value": "luckystarawardrank",
+          "hex": null
+        },
+        "LUCKSTAR_REFRESH": {
+          "value": "luckystarrefresh",
+          "hex": null
+        },
+        "LUCKSTAR_RANKING": {
+          "value": "luckystarreceiverank",
+          "hex": null
+        },
+        "ACCUMULATIVELOGIN_AWARD": {
+          "value": "accumulativeLogin_award",
+          "hex": null
+        },
+        "WORLDBOSS_INIT": {
+          "value": "worldboss_init",
+          "hex": null
+        },
+        "WORLDBOSS_OVER": {
+          "value": "worldboss_over",
+          "hex": null
+        },
+        "WORLDBOSS_ROOM": {
+          "value": "worldboss_room",
+          "hex": null
+        },
+        "WORLDBOSS_ROOM_LOGIN": {
+          "value": "worldboss_room_login",
+          "hex": null
+        },
+        "WORLDBOSS_MOVE": {
+          "value": "worldboss_move",
+          "hex": null
+        },
+        "WORLDBOSS_EXIT": {
+          "value": "worldboss_exit",
+          "hex": null
+        },
+        "WORLDBOSS_PLAYERSTAUTSUPDATE": {
+          "value": "worldBoss_playerStautsUpdate",
+          "hex": null
+        },
+        "WORLDBOSS_ROOMCLOSE": {
+          "value": "worldBoss_roomclose",
+          "hex": null
+        },
+        "WORLDBOSS_BLOOD_UPDATE": {
+          "value": "boss_blood_update",
+          "hex": null
+        },
+        "WORLDBOSS_ENTER": {
+          "value": "worldboss_enter",
+          "hex": null
+        },
+        "WORLDBOSS_FIGHTOVER": {
+          "value": "worldboss_fightOver",
+          "hex": null
+        },
+        "WORLDBOSS_RANKING": {
+          "value": "worldboss_ranking",
+          "hex": null
+        },
+        "WORLDBOSS_PLAYERREVIVE": {
+          "value": "worldboss_revive",
+          "hex": null
+        },
+        "WORLDBOSS_RANKING_INROOM": {
+          "value": "worldboss_ranking_inroom",
+          "hex": null
+        },
+        "WORLDBOSS_BUYBUFF": {
+          "value": "worldboss_buy_buff",
+          "hex": null
+        },
+        "WORLDBOSS_PRIVATE_INFO": {
+          "value": "WORLDBOSS_PRIVATE_INFO",
+          "hex": null
+        },
+        "WORLDBOSS_ASSISTANT": {
+          "value": "WORLDBOSS_ASSISTANT",
+          "hex": null
+        },
+        "WORLDBOSS_PLAYERFIGHTASSIATANT": {
+          "value": "WORLDBOSS_PLAYERFIGHTASSIATANT",
+          "hex": null
+        },
+        "USEMONEYPOINT_COMPLETE": {
+          "value": "usemoneypoint_complete",
+          "hex": null
+        },
+        "GETACTIVEPOINT_REWARD": {
+          "value": "getactivepoint_reward",
+          "hex": null
+        },
+        "EVERYDAYACTIVEPOINT_DATA": {
+          "value": "everydayaactiviepoint_data",
+          "hex": null
+        },
+        "EVERYDAYACTIVEPOINT_CHANGE": {
+          "value": "everydayactivepoint_change",
+          "hex": null
+        },
+        "ADD_ACTIVITY_DATA_CHANGE": {
+          "value": "add_activity_data_change",
+          "hex": null
+        },
+        "LATENT_ENERGY": {
+          "value": "latent_energy",
+          "hex": null
+        },
+        "PYRAMID_SYSTEM": {
+          "value": "pyramid_system",
+          "hex": null
+        },
+        "GAME_TRUSTEESHIP": {
+          "value": "game_trusteeship",
+          "hex": null
+        },
+        "GAME_FREEWALKEVENT": {
+          "value": "game_freewalk",
+          "hex": null
+        },
+        "PSYCHIC_SET": {
+          "value": "psychic_living_set",
+          "hex": null
+        },
+        "AVATAR_COLLECTION": {
+          "value": "avatar_collection",
+          "hex": null
+        },
+        "DRAGON_BOAT": {
+          "value": "dragon_boat",
+          "hex": null
+        },
+        "KING_BLESS_MAIN": {
+          "value": "king_bless_main",
+          "hex": null
+        },
+        "KING_BLESS_UPDATE_BUFF_DATA": {
+          "value": "king_bless_update_buff_data",
+          "hex": null
+        },
+        "LIMITED_CHARGE_ACTIVE": {
+          "value": "limited_charge_active",
+          "hex": null
+        },
+        "INIT_TREASURE": {
+          "value": "initTreasure",
+          "hex": null
+        },
+        "PAY_FOR_HUNTING": {
+          "value": "payForHunting",
+          "hex": null
+        },
+        "HUNTING_BY_SCORE": {
+          "value": "huntingByScore",
+          "hex": null
+        },
+        "CONVERT_SCORE": {
+          "value": "convertScore",
+          "hex": null
+        },
+        "GET_MYSTERIOUS_DATA": {
+          "value": "getMysteriousData",
+          "hex": null
+        },
+        "DAWN_LOTTERY": {
+          "value": "dawnLottery",
+          "hex": null
+        },
+        "REGRESS_PACKS": {
+          "value": "regress_pakcs",
+          "hex": null
+        },
+        "REGRESS_CHECK": {
+          "value": "regress_check",
+          "hex": null
+        },
+        "REGRESS_APPLYPACKS": {
+          "value": "regress_applypakcs",
+          "hex": null
+        },
+        "REGRESS_APPLY_ENABLE": {
+          "value": "regress_apply_enable",
+          "hex": null
+        },
+        "REGRESS_GET_TICKET": {
+          "value": "regress_get_ticket",
+          "hex": null
+        },
+        "REGRESS_GET_TICKETINFO": {
+          "value": "regress_get_ticketInfo",
+          "hex": null
+        },
+        "REGRESS_CALLAPPLY": {
+          "value": "regress_callaplly",
+          "hex": null
+        },
+        "REGRESS_RECVPACKS": {
+          "value": "regress_recvpacks",
+          "hex": null
+        },
+        "REGRESS_UPDATE_INTEGRAL": {
+          "value": "regressupdate_integral",
+          "hex": null
+        },
+        "NEW_QUEST_BEGIN_LOAD": {
+          "value": "newquest_load",
+          "hex": null
+        },
+        "NEW_QUEST_READ": {
+          "value": "newquest_read",
+          "hex": null
+        },
+        "NEW_QUEST_END_LOAD": {
+          "value": "newquest_end",
+          "hex": null
+        },
+        "PAYCENTER_MESSAGE": {
+          "value": "paycenter_message",
+          "hex": null
+        },
+        "NOVICE_RECHARGE_OFFER": {
+          "value": "novice_recharge_offer",
+          "hex": null
+        },
+        "DDPASS_MESSAGE": {
+          "value": "ddpass_message",
+          "hex": null
+        },
+        "DAILY_CHECKIN_AWARD_MESSAGE": {
+          "value": "daily_checkin_award_message",
+          "hex": null
+        },
+        "DDPLAY_BEGIN": {
+          "value": "DDPlay_brgin",
+          "hex": null
+        },
+        "DDPLAY_ENTER": {
+          "value": "DDPlay_enter",
+          "hex": null
+        },
+        "DDPLAY_START": {
+          "value": "DDPlay_start",
+          "hex": null
+        },
+        "DDPLAY_EXCHANGE": {
+          "value": "DDPlay_exchange",
+          "hex": null
+        },
+        "LOTTERY_TICKET": {
+          "value": "lotteryTicket",
+          "hex": null
+        },
+        "BATTLE_PASS_MESSAGE": {
+          "value": "battlePassMessage",
+          "hex": null
+        },
+        "CODEX": {
+          "value": "codex",
+          "hex": null
+        },
+        "UNCLE_TONY": {
+          "value": "uncleTony",
+          "hex": null
+        },
+        "RESCUE_ITEM_INFO": {
+          "value": "RescueItemInfo",
+          "hex": null
+        },
+        "RESCUE_KING_BLESS": {
+          "value": "RescueKingBless",
+          "hex": null
+        },
+        "ADD_SCORE": {
+          "value": "addScore",
+          "hex": null
+        },
+        "SET_PROP_ENABLE": {
+          "value": "setPropEnable",
+          "hex": null
+        },
+        "CATCHBEAST_BEGIN": {
+          "value": "catchbeast_begin",
+          "hex": null
+        },
+        "CATCHBEAST_VIEWINFO": {
+          "value": "catchbeast_viewinfo",
+          "hex": null
+        },
+        "CATCHBEAST_CHALLENGE": {
+          "value": "catchbeast_challenge",
+          "hex": null
+        },
+        "CATCHBEAST_BUYBUFF": {
+          "value": "catchbeast_buybuff",
+          "hex": null
+        },
+        "CATCHBEAST_GETAWARD": {
+          "value": "catchbeast_getaward",
+          "hex": null
+        },
+        "RECONNECT_CHANNEL": {
+          "value": "reconnect_channel",
+          "hex": null
+        },
+        "RANKED_INIT": {
+          "value": "ranked_init",
+          "hex": null
+        },
+        "RANKED_LEADERBOARD": {
+          "value": "ranked_leaderboard",
+          "hex": null
+        },
+        "RANKED_CLAIM_REWARD": {
+          "value": "ranked_claim_reward",
+          "hex": null
+        },
+        "RANKED_MATCH_RESULT": {
+          "value": "ranked_match_result",
+          "hex": null
+        },
+        "RANKED_STATS": {
+          "value": "ranked_stats",
+          "hex": null
+        },
+        "RANKED_SET_COSMETIC": {
+          "value": "ranked_set_cosmetic",
+          "hex": null
+        },
+        "RANKED_START_MATCH": {
+          "value": "ranked_start_match",
+          "hex": null
+        },
+        "RANKED_ELO_REWARD": {
+          "value": "ranked_elo_reward",
+          "hex": null
+        },
+        "CONSORTIA_BOSS_OPEN_CLOSE": {
+          "value": "consortia_boss_open_close",
+          "hex": null
+        },
+        "CONSORTIA_BOSS_INFO": {
+          "value": "consortia_boss_info",
+          "hex": null
+        }
+      }
+    },
+    "ddt/manager/GameInSocketOut": {
+      "class_name": "GameInSocketOut",
+      "constants_count": 59,
+      "constants": {
+        "sendGetScenePlayer": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "sendInviteGame": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "sendBuyProp": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "sendSellProp": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "sendGameRoomSetUp": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "sendCreateRoom": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "sendGameRoomPlaceState": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "sendGameRoomKick": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "sendExitScene": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "sendGamePlayerExit": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "sendGameTeam": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "sendFlagMode": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "sendGameStart": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "sendGameMissionStart": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "sendGameMissionPrepare": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "sendLoadingProgress": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "sendPlayerState": {
+          "value": 17,
+          "hex": "0x11"
+        },
+        "sendGameCMDBlast": {
+          "value": 18,
+          "hex": "0x12"
+        },
+        "sendGameCMDChange": {
+          "value": 19,
+          "hex": "0x13"
+        },
+        "sendGameCMDDirection": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "sendGameCMDStunt": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "sendGameCMDShoot": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "sendGameSkipNext": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "sendGameStartMove": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "sendGameStopMove": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "sendGameTakeOut": {
+          "value": 26,
+          "hex": "0x1a"
+        },
+        "sendBossTakeOut": {
+          "value": 27,
+          "hex": "0x1b"
+        },
+        "sendGetTropToBag": {
+          "value": 28,
+          "hex": "0x1c"
+        },
+        "sendShootTag": {
+          "value": 29,
+          "hex": "0x1d"
+        },
+        "sendBeat": {
+          "value": 30,
+          "hex": "0x1e"
+        },
+        "sendThrowProp": {
+          "value": 31,
+          "hex": "0x1f"
+        },
+        "sendUseProp": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "sendCancelWait": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "sendGameStyle": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "sendGhostTarget": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "sendPaymentTakeCard": {
+          "value": 36,
+          "hex": "0x24"
+        },
+        "sendMissionTryAgain": {
+          "value": 37,
+          "hex": "0x25"
+        },
+        "sendFightLibInfoChange": {
+          "value": 38,
+          "hex": "0x26"
+        },
+        "sendPassStory": {
+          "value": 39,
+          "hex": "0x27"
+        },
+        "sendClientScriptStart": {
+          "value": 40,
+          "hex": "0x28"
+        },
+        "sendClientScriptEnd": {
+          "value": 41,
+          "hex": "0x29"
+        },
+        "sendFightLibAnswer": {
+          "value": 42,
+          "hex": "0x2a"
+        },
+        "sendFightLibReanswer": {
+          "value": 43,
+          "hex": "0x2b"
+        },
+        "sendUpdatePlayStep": {
+          "value": 44,
+          "hex": "0x2c"
+        },
+        "sendPackage": {
+          "value": 45,
+          "hex": "0x2d"
+        },
+        "sendFirstRechargeGetAward": {
+          "value": 46,
+          "hex": "0x2e"
+        },
+        "sendFirstRechargeUpdateInfo": {
+          "value": 47,
+          "hex": "0x2f"
+        },
+        "sendNoviceActivityGetAward": {
+          "value": 48,
+          "hex": "0x30"
+        },
+        "sendTransmissionGate": {
+          "value": 49,
+          "hex": "0x31"
+        },
+        "sendDiceRefreshData": {
+          "value": 50,
+          "hex": "0x32"
+        },
+        "sendStartDiceInfo": {
+          "value": 51,
+          "hex": "0x33"
+        },
+        "sendRequestEnterDiceSystem": {
+          "value": 52,
+          "hex": "0x34"
+        },
+        "sendSingleRoomBegin": {
+          "value": 53,
+          "hex": "0x35"
+        },
+        "sendPyramidStartOrstop": {
+          "value": 54,
+          "hex": "0x36"
+        },
+        "sendPyramidTurnCard": {
+          "value": 55,
+          "hex": "0x37"
+        },
+        "sendPyramidRevive": {
+          "value": 56,
+          "hex": "0x38"
+        },
+        "sendRequestEnterPyramidSystem": {
+          "value": 57,
+          "hex": "0x39"
+        },
+        "sendPayCenterUpdateInfo": {
+          "value": 58,
+          "hex": "0x3a"
+        },
+        "sendPayCenterRechargeRequest": {
+          "value": 59,
+          "hex": "0x3b"
+        }
+      }
+    },
+    "ddt/manager/SocketManager": {
+      "class_name": "SocketManager",
+      "constants_count": 2,
+      "constants": {
+        "PACKAGE_CONTENT_START_INDEX": {
+          "value": 20,
+          "hex": "0x14"
+        },
+        "Instance": {
+          "value": 1,
+          "hex": "0x1"
+        }
+      }
+    },
+    "dragonBoat/DragonBoatPackageType": {
+      "class_name": "DragonBoatPackageType",
+      "constants_count": 6,
+      "constants": {
+        "START_OR_CLOSE": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "BUILD_DECORATE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "REFRESH_BOAT_STATUS": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "EXCHANGE": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "REFRESH_RANK": {
+          "value": 16,
+          "hex": "0x10"
+        },
+        "REFRESH_RANK_OTHER": {
+          "value": 17,
+          "hex": "0x11"
+        }
+      }
+    },
+    "inviteFriends/data/InviteFriendPackageType": {
+      "class_name": "InviteFriendPackageType",
+      "constants_count": 6,
+      "constants": {
+        "INVITE_FRIEND_OPENVIEW": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "INVITE_FRIEND_FRIENDREWARD": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "INVITE_FRIEND_FLUSHFRIENDNUM": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "INVITE_FRIEND_GETREWARD": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "INVITE_FRIEND_LOGIN": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "INVITE_FRIEND_FBCLICK": {
+          "value": 6,
+          "hex": "0x6"
+        }
+      }
+    },
+    "labyrinth/data/LabyrinthPackageType": {
+      "class_name": "LabyrinthPackageType",
+      "constants_count": 18,
+      "constants": {
+        "DOUBLE_REWARD": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "DOUBLE_REWARD_EVENT": {
+          "value": "doubleRrward",
+          "hex": null
+        },
+        "REQUEST_UPDATE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "REQUEST_UPDATE_EVENT": {
+          "value": "requestUpdate",
+          "hex": null
+        },
+        "CLEAN_OUT": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "CLEAN_OUT_EVENT": {
+          "value": "cleanOut",
+          "hex": null
+        },
+        "SPEEDED_UP_CLEAN_OUT": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "SPEEDED_UP_CLEAN_OUT_EVENT": {
+          "value": "speededUpCleanOut",
+          "hex": null
+        },
+        "STOP_CLEAN_OUT": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "STOP_CLEAN_OUT_EVENT": {
+          "value": "stopCleanOut",
+          "hex": null
+        },
+        "RESET_LABYRINTH": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "RESET_LABYRINTH_EVENT": {
+          "value": "resrtLabyrinth",
+          "hex": null
+        },
+        "PUSH_CLEAN_OUT_INFO": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "PUSH_CLEAN_OUT_INFO_EVENT": {
+          "value": "pushCleanOutInfo",
+          "hex": null
+        },
+        "CLEAN_OUT_COMPLETE": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "CLEAN_OUT_COMPLETE_EVENT": {
+          "value": "CleanOutComplete",
+          "hex": null
+        },
+        "TRY_AGAIN": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "TRY_AGAIN_EVENT": {
+          "value": "tryAgain",
+          "hex": null
+        }
+      }
+    },
+    "limitedChargeActivity/EventAndType/limitedChargeActivityPackageType": {
+      "class_name": "limitedChargeActivityPackageType",
+      "constants_count": 2,
+      "constants": {
+        "ACTIVITY_BEGIN": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "ACTIVITY_INFO": {
+          "value": 1,
+          "hex": "0x1"
+        }
+      }
+    },
+    "littleGame/events/LittleGameSocketEvent": {
+      "class_name": "LittleGameSocketEvent",
+      "constants_count": 22,
+      "constants": {
+        "INHALED": {
+          "value": "inhaled",
+          "hex": null
+        },
+        "WORLD_LIST": {
+          "value": "worldlist",
+          "hex": null
+        },
+        "START_LOAD": {
+          "value": "startload",
+          "hex": null
+        },
+        "GAME_START": {
+          "value": "gamestart",
+          "hex": null
+        },
+        "ADD_SPRITE": {
+          "value": "addsprite",
+          "hex": null
+        },
+        "REMOVE_SPRITE": {
+          "value": "removesprite",
+          "hex": null
+        },
+        "MOVE": {
+          "value": "move",
+          "hex": null
+        },
+        "ADD_SCHEDULE": {
+          "value": "addschedule",
+          "hex": null
+        },
+        "REMOVE_SCHEDULE": {
+          "value": "removeschedule",
+          "hex": null
+        },
+        "INVOKE_SCHEDULE": {
+          "value": "invokeschedule",
+          "hex": null
+        },
+        "UPDATE_POS": {
+          "value": "updatepos",
+          "hex": null
+        },
+        "ADD_OBJECT": {
+          "value": "addObject",
+          "hex": null
+        },
+        "REMOVE_OBJECT": {
+          "value": "removeObject",
+          "hex": null
+        },
+        "INVOKE_OBJECT": {
+          "value": "invokeObject",
+          "hex": null
+        },
+        "UPDATELIVINGSPROPERTY": {
+          "value": "updatelivingsproperty",
+          "hex": null
+        },
+        "DOMOVIE": {
+          "value": "domive",
+          "hex": null
+        },
+        "DOACTION": {
+          "value": "doaction",
+          "hex": null
+        },
+        "GETSCORE": {
+          "value": "getscore",
+          "hex": null
+        },
+        "SETCLOCK": {
+          "value": "setclock",
+          "hex": null
+        },
+        "PONG": {
+          "value": "pong",
+          "hex": null
+        },
+        "NET_DELAY": {
+          "value": "netdelay",
+          "hex": null
+        },
+        "KICK_PLAYE": {
+          "value": "kickpalyer",
+          "hex": null
+        }
+      }
+    },
+    "newChickenBox/NewChickenBoxPackageType": {
+      "class_name": "NewChickenBoxPackageType",
+      "constants_count": 24,
+      "constants": {
+        "ENTERCHICKENVIEW": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "USEEAGLEEYE": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "TAKEOVERCARD": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "FLUSHCHICKENVIEW": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "CLICKSTARTBNT": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "AllITEMSHOW": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "CHICKENBOXOPEN": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "CHICKENBOXCLOSE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "GETITEMLIST": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "CANCLICKCARD": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "TACKOVERCARD": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "EAGLEEYE": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "OVERSHOWITEMS": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "ENTER_GAME": {
+          "value": 31,
+          "hex": "0x1f"
+        },
+        "CLOSE_GAME": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "START_TURN": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "TURN_COMPLETE": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "ALL_GOODS_INFO": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "REWARD_RECORD": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "GOODS_INFO": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "PLAY_REWARD_INFO": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "ACTIVITY_OPEN": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "ACTIVITY_END": {
+          "value": 26,
+          "hex": "0x1a"
+        },
+        "AWARD_RANK": {
+          "value": 27,
+          "hex": "0x1b"
+        }
+      }
+    },
+    "newChickenBox/model/NewChickenBoxPackageType": {
+      "class_name": "NewChickenBoxPackageType",
+      "constants_count": 26,
+      "constants": {
+        "ENTERCHICKENVIEW": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "USEEAGLEEYE": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "TAKEOVERCARD": {
+          "value": 13,
+          "hex": "0xd"
+        },
+        "FLUSHCHICKENVIEW": {
+          "value": 14,
+          "hex": "0xe"
+        },
+        "CLICKSTARTBNT": {
+          "value": 15,
+          "hex": "0xf"
+        },
+        "AllITEMSHOW": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "CHICKENBOXOPEN": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "CHICKENBOXCLOSE": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "GETITEMLIST": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "CANCLICKCARD": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "TACKOVERCARD": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "EAGLEEYE": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "OVERSHOWITEMS": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "ENTER_GAME": {
+          "value": 31,
+          "hex": "0x1f"
+        },
+        "CLOSE_GAME": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "START_TURN": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "TURN_COMPLETE": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "ALL_GOODS_INFO": {
+          "value": 21,
+          "hex": "0x15"
+        },
+        "REWARD_RECORD": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "GOODS_INFO": {
+          "value": 23,
+          "hex": "0x17"
+        },
+        "PLAY_REWARD_INFO": {
+          "value": 24,
+          "hex": "0x18"
+        },
+        "ACTIVITY_OPEN": {
+          "value": 25,
+          "hex": "0x19"
+        },
+        "ACTIVITY_END": {
+          "value": 26,
+          "hex": "0x1a"
+        },
+        "AWARD_RANK": {
+          "value": 27,
+          "hex": "0x1b"
+        },
+        "LUCKSTAR_REFRESH": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "RECEIVE_RANKING": {
+          "value": 36,
+          "hex": "0x24"
+        }
+      }
+    },
+    "pyramid/PyramidPackageType": {
+      "class_name": "PyramidPackageType",
+      "constants_count": 6,
+      "constants": {
+        "PYRAMID_OPENORCLOSE": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "PYRAMID_ENTER": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "PYRAMID_STARTORSTOP": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "PYRAMID_RESULT": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "PYRAMID_DIEEVENT": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "PYRAMID_SCORECONVERT": {
+          "value": 5,
+          "hex": "0x5"
+        }
+      }
+    },
+    "road7th/comm/SocketEvent": {
+      "class_name": "SocketEvent",
+      "constants_count": 1,
+      "constants": {
+        "DATA": {
+          "value": "data",
+          "hex": null
+        }
+      }
+    },
+    "road7th/comm/SocketOutEvent": {
+      "class_name": "SocketOutEvent",
+      "constants_count": 1,
+      "constants": {
+        "SEND": {
+          "value": "send",
+          "hex": null
+        }
+      }
+    },
+    "worldboss/model/WorldBossGamePackageType": {
+      "class_name": "WorldBossGamePackageType",
+      "constants_count": 9,
+      "constants": {
+        "ENTER_WORLDBOSSROOM": {
+          "value": 32,
+          "hex": "0x20"
+        },
+        "MOVE": {
+          "value": 35,
+          "hex": "0x23"
+        },
+        "LEAVE_ROOM": {
+          "value": 33,
+          "hex": "0x21"
+        },
+        "STAUTS": {
+          "value": 36,
+          "hex": "0x24"
+        },
+        "ADDPLAYERS": {
+          "value": 34,
+          "hex": "0x22"
+        },
+        "REQUEST_REVIVE": {
+          "value": 37,
+          "hex": "0x25"
+        },
+        "BUFF_BUY": {
+          "value": 38,
+          "hex": "0x26"
+        },
+        "ASSISTANT": {
+          "value": 39,
+          "hex": "0x27"
+        },
+        "ENTRYSCENES": {
+          "value": 40,
+          "hex": "0x28"
+        }
+      }
+    },
+    "worldboss/model/WorldBossPackageType": {
+      "class_name": "WorldBossPackageType",
+      "constants_count": 16,
+      "constants": {
+        "OPEN": {
+          "value": 0,
+          "hex": "0x0"
+        },
+        "OVER": {
+          "value": 1,
+          "hex": "0x1"
+        },
+        "CANENTER": {
+          "value": 2,
+          "hex": "0x2"
+        },
+        "MOVE": {
+          "value": 6,
+          "hex": "0x6"
+        },
+        "ENTER": {
+          "value": 3,
+          "hex": "0x3"
+        },
+        "WORLDBOSS_EXIT": {
+          "value": 4,
+          "hex": "0x4"
+        },
+        "WORLDBOSS_PLAYERSTAUTSUPDATE": {
+          "value": 7,
+          "hex": "0x7"
+        },
+        "WORLDBOSS_FIGHTOVER": {
+          "value": 8,
+          "hex": "0x8"
+        },
+        "WORLDBOSS_ROOM_CLOSE": {
+          "value": 9,
+          "hex": "0x9"
+        },
+        "WORLDBOSS_BLOOD_UPDATE": {
+          "value": 5,
+          "hex": "0x5"
+        },
+        "WORLDBOSS_RANKING": {
+          "value": 10,
+          "hex": "0xa"
+        },
+        "WORLDBOSS_PLAYER_REVIVE": {
+          "value": 11,
+          "hex": "0xb"
+        },
+        "WORLDBOSS_BUYBUFF": {
+          "value": 12,
+          "hex": "0xc"
+        },
+        "WORLDBOSS_PRIVATE_INFO": {
+          "value": 22,
+          "hex": "0x16"
+        },
+        "ASSISTANT": {
+          "value": 39,
+          "hex": "0x27"
+        },
+        "PlayerFightAssistant": {
+          "value": 13,
+          "hex": "0xd"
+        }
+      }
+    }
+  }
+}

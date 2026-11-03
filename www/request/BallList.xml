@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Result value="true" message="Success">
+    <Item ID="1" Name="Canhão Padrão" Crater="1" BombPartical="1" FlyingPartical="1" blastOutID="1" craterID="1" />
+    <Item ID="2" Name="Bumerangue" Crater="2" BombPartical="2" FlyingPartical="2" blastOutID="2" craterID="2" />
+    <Item ID="3" Name="Quebra-Tijolos" Crater="3" BombPartical="3" FlyingPartical="3" blastOutID="3" craterID="3" />
+    <Item ID="4" Name="Lança Trovão" Crater="4" BombPartical="4" FlyingPartical="4" blastOutID="4" craterID="4" />
+    <Item ID="5" Name="Dom de Amor" Crater="5" BombPartical="5" FlyingPartical="5" blastOutID="5" craterID="5" />
+    <Item ID="64" Name="Tiro Triplo (+2)" Crater="1" BombPartical="1" FlyingPartical="1" blastOutID="1" craterID="1" />
+    <Item ID="87" Name="Laser / Especial" Crater="87" BombPartical="87" FlyingPartical="87" blastOutID="87" craterID="87" />
+</Result>

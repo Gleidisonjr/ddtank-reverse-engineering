@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Result value="true" message="Success">
+    <Item ID="1" Name="Chapéu" Place="0" Remark="Head" />
+    <Item ID="2" Name="Óculos" Place="1" Remark="Glass" />
+    <Item ID="3" Name="Cabelo" Place="2" Remark="Hair" />
+    <Item ID="4" Name="Olhos" Place="3" Remark="Eff" />
+    <Item ID="5" Name="Roupa" Place="4" Remark="Cloth" />
+    <Item ID="6" Name="Rosto" Place="5" Remark="Face" />
+    <Item ID="7" Name="Arma" Place="6" Remark="Arm" />
+    <Item ID="8" Name="Bracelete" Place="7" Remark="Armlet" />
+    <Item ID="9" Name="Anel" Place="9" Remark="Ring" />
+    <Item ID="11" Name="Item de Uso" Place="0" Remark="Prop" />
+    <Item ID="12" Name="Missão" Place="0" Remark="Task" />
+    <Item ID="13" Name="Terno" Place="11" Remark="Suits" />
+    <Item ID="14" Name="Colar" Place="12" Remark="Necklace" />
+    <Item ID="15" Name="Asas" Place="13" Remark="Wing" />
+    <Item ID="16" Name="Bolha" Place="14" Remark="ChatBall" />
+    <Item ID="17" Name="Arma Secundária" Place="15" Remark="Offhand" />
+    <Item ID="18" Name="Cartas" Place="0" Remark="Cards" />
+    <Item ID="19" Name="Pedra de Cura" Place="0" Remark="HealStone" />
+    <Item ID="20" Name="Prática" Place="0" Remark="Texp" />
+    <Item ID="31" Name="Especial" Place="0" Remark="Special" />
+    <Item ID="34" Name="Comida de Pet" Place="0" Remark="PetFood" />
+    <Item ID="35" Name="Ovo de Pet" Place="0" Remark="PetEgg" />
+    <Item ID="50" Name="Arma Pet" Place="0" Remark="PetArm" />
+    <Item ID="51" Name="Chapéu Pet" Place="0" Remark="PetHead" />
+    <Item ID="52" Name="Roupa Pet" Place="0" Remark="PetCloth" />
+</Result>

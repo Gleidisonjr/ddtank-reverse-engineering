@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Result value="true" message="Success">
+    <Item ID="1" Name="Vila das Fadas" Type="1" Description="Mapa clássico verdejante" Pic="map/1" />
+    <Item ID="2" Name="Castelo Antigo" Type="1" Description="Ruínas medievais" Pic="map/2" />
+    <Item ID="3" Name="Laboratório Secreto" Type="1" Description="Complexo subterrâneo de alta tecnologia" Pic="map/3" />
+    <Item ID="4" Name="Deserto dos Ventos" Type="1" Description="Dunas escaldantes sob fortes correntes de ar" Pic="map/4" />
+</Result>
