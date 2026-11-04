@@ -14,6 +14,7 @@ import socket
 import time
 import sys
 import os
+import atexit
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 RUNTIME_EXE = os.path.join(BASE_DIR, 'runtime', 'DDClassico.Runtime.exe')
@@ -22,6 +23,32 @@ if not os.path.exists(RUNTIME_EXE):
 FLASH_DLL = os.path.join(BASE_DIR, 'runtime', 'resources', 'flashver', 'pepflashplayer64.dll')
 if not os.path.exists(FLASH_DLL):
     FLASH_DLL = os.path.join(BASE_DIR, '..', '..', 'targets', 'dd-classico', 'extracted', 'app', 'runtime', 'resources', 'flashver', 'pepflashplayer64.dll')
+
+
+def cleanup_ports(ports=(8080, 9200, 843)):
+    """Kills any orphaned processes currently occupying the required cluster ports."""
+    pids_to_kill = set()
+    current_pid = os.getpid()
+    for port in ports:
+        try:
+            out = subprocess.check_output(f'netstat -ano | findstr :{port}', shell=True, stderr=subprocess.DEVNULL).decode()
+            for line in out.strip().split('\n'):
+                parts = line.split()
+                if len(parts) >= 5 and parts[1].endswith(f':{port}') and parts[3] == 'LISTENING':
+                    pid = int(parts[4])
+                    if pid != current_pid and pid != 0:
+                        pids_to_kill.add(pid)
+        except Exception:
+            pass
+
+    for pid in pids_to_kill:
+        try:
+            print(f"[*] Terminating orphaned process on game port (PID {pid})...")
+            subprocess.run(f'taskkill /F /T /PID {pid}', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except Exception:
+            pass
+    if pids_to_kill:
+        time.sleep(0.5)
 
 
 def get_tailscale_ip():
@@ -42,11 +69,16 @@ def get_tailscale_ip():
 class DDTCluster:
     def __init__(self):
         self.procs = {}
+        atexit.register(self.stop_all)
 
     def start_services(self):
         print("==================================================================")
         print("         DDTANK LOCAL CLUSTER & EMULATOR ORCHESTRATOR             ")
         print("==================================================================")
+        
+        # Ensure ports 8080, 9200, 843 are completely clean before starting
+        cleanup_ports([8080, 9200, 843])
+
         ts_ip = get_tailscale_ip()
         if ts_ip:
             print(f"[+] Tailscale IP Detected: {ts_ip}")
@@ -71,7 +103,15 @@ class DDTCluster:
         self.procs['game'] = subprocess.Popen([sys.executable, game_script])
 
         time.sleep(1.5)
-        print("\n[+] All 3 Daemons are Active and Ready!")
+
+        # Health check daemons
+        all_ok = True
+        for name, proc in self.procs.items():
+            if proc.poll() is not None:
+                print(f"[-] ERROR: Daemon {name} failed to start (exit code {proc.returncode})!")
+                all_ok = False
+        if all_ok:
+            print("\n[+] All 3 Daemons are Active and Ready!")
 
     def launch_client(self):
         if not os.path.exists(RUNTIME_EXE):
@@ -100,13 +140,16 @@ class DDTCluster:
             self.stop_all()
 
     def stop_all(self):
+        if not self.procs:
+            return
         print("\n[*] Stopping all cluster services...")
-        for name, proc in self.procs.items():
+        for name, proc in list(self.procs.items()):
             try:
-                proc.terminate()
-                print(f"  [+] Stopped {name}")
+                subprocess.run(f'taskkill /F /T /PID {proc.pid}', shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                print(f"  [+] Stopped {name} (PID {proc.pid})")
             except Exception:
                 pass
+        self.procs.clear()
         print("[+] Cluster stopped cleanly.")
 
 
