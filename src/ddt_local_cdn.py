@@ -32,6 +32,12 @@ MIME_TYPES = {
     '.ico': 'image/x-icon',
 }
 
+# 100% compliant minimal AS3 SWF (31 bytes, AS3 bit set, ShowFrame, End)
+MINIMAL_AS3_SWF = bytes.fromhex('4657530e1f000000780007d000001770000018010044110800000040000000')
+
+# 1x1 transparent dummy PNG (67 bytes)
+EMPTY_PNG = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82'
+
 
 def get_tailscale_ip():
     """Attempts to find the Tailscale 100.x.y.z IP address on this machine."""
@@ -130,6 +136,8 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
         # Route PickGliss UI package (xml.png)
         if raw_path.endswith('xml.png') or 'xml.png' in raw_path:
             xml_png_path = os.path.join(WWW_DIR, 'flash', 'ui', 'xml', 'xml.png')
+            if not os.path.exists(xml_png_path):
+                xml_png_path = os.path.join(WWW_DIR, 'ui', 'xml', 'xml.png')
             if os.path.exists(xml_png_path):
                 self.send_response(200)
                 self.send_header('Content-Type', 'image/png')
@@ -140,27 +148,76 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(content)
                 return
 
+        # Route 3.png (Trainer SWF package)
+        if raw_path.endswith('3.png') or '3.png' in raw_path:
+            p3 = os.path.join(WWW_DIR, 'flash', '3.png')
+            if not os.path.exists(p3):
+                p3 = os.path.join(WWW_DIR, '3.png')
+            content = None
+            if os.path.exists(p3):
+                with open(p3, 'rb') as f:
+                    content = f.read()
+            else:
+                content = MINIMAL_AS3_SWF
+            self.send_response(200)
+            self.send_header('Content-Type', 'image/png')
+            self.send_header('Content-Length', str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+
         clean_path = raw_path
         local_file = os.path.normpath(os.path.join(WWW_DIR, clean_path.lstrip('/')))
 
-        # If file does not exist, but is an XML, ASHX or ASPX request, serve dynamic success XML
-        if not os.path.exists(local_file) and (clean_path.endswith('.xml') or clean_path.endswith('.ashx') or clean_path.endswith('.aspx')):
+        # Dual path resolution: try with and without /flash/ prefix
+        if not os.path.exists(local_file):
+            if clean_path.startswith('/flash/'):
+                alt_file = os.path.normpath(os.path.join(WWW_DIR, clean_path[7:]))
+                if os.path.exists(alt_file):
+                    local_file = alt_file
+            else:
+                alt_file = os.path.normpath(os.path.join(WWW_DIR, 'flash', clean_path.lstrip('/')))
+                if os.path.exists(alt_file):
+                    local_file = alt_file
+
+        # If file exists on disk, serve it directly
+        if os.path.exists(local_file) and not os.path.isdir(local_file):
+            ctype = self.guess_type(local_file)
+            self.send_response(200)
+            self.send_header('Content-Type', ctype)
+            with open(local_file, 'rb') as f:
+                content = f.read()
+            self.send_header('Content-Length', str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
+
+        # Dynamic Fallback 1: Any requested SWF that does not exist -> return valid minimal AS3 SWF
+        if clean_path.endswith('.swf'):
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/x-shockwave-flash')
+            self.send_header('Content-Length', str(len(MINIMAL_AS3_SWF)))
+            self.end_headers()
+            self.wfile.write(MINIMAL_AS3_SWF)
+            return
+
+        # Dynamic Fallback 2: XML, ASHX or ASPX -> return valid success XML
+        if clean_path.endswith('.xml') or clean_path.endswith('.ashx') or clean_path.endswith('.aspx'):
             self.send_response(200)
             self.send_header('Content-Type', 'text/xml; charset=utf-8')
-            self.end_headers()
             fallback_xml = b'<?xml version="1.0" encoding="utf-8" ?>\n<Result value="true" message="Success">\n</Result>\n'
+            self.send_header('Content-Length', str(len(fallback_xml)))
+            self.end_headers()
             self.wfile.write(fallback_xml)
             return
 
-        # If requested PNG does not exist in UI or flash, fallback to transparent 1x1 PNG
-        if not os.path.exists(local_file) and clean_path.endswith('.png'):
+        # Dynamic Fallback 3: Images (PNG, JPG, etc.) -> return 1x1 transparent PNG
+        if clean_path.endswith(('.png', '.jpg', '.jpeg', '.gif')):
             self.send_response(200)
             self.send_header('Content-Type', 'image/png')
-            # 1x1 transparent PNG
-            empty_png = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82'
-            self.send_header('Content-Length', str(len(empty_png)))
+            self.send_header('Content-Length', str(len(EMPTY_PNG)))
             self.end_headers()
-            self.wfile.write(empty_png)
+            self.wfile.write(EMPTY_PNG)
             return
 
         return super().do_GET()

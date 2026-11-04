@@ -25,7 +25,7 @@
         <CHURCH_ENABLE value="true">true</CHURCH_ENABLE>
         <CIVIL_ENABLE value="true">true</CIVIL_ENABLE>
         <ACHIEVE_ENABLE value="true">true</ACHIEVE_ENABLE>
-        <TRAINER_STANDALONE value="true">true</TRAINER_STANDALONE>
+        <TRAINER_STANDALONE value="false">false</TRAINER_STANDALONE>
         <AUTO_UNLOCK value="true">true</AUTO_UNLOCK>
     </config>
     <FLASHSITE value="http://127.0.0.1:8080/flash/">http://127.0.0.1:8080/flash/</FLASHSITE>
@@ -52,6 +52,6 @@
     <CHURCH_ENABLE value="true">true</CHURCH_ENABLE>
     <CIVIL_ENABLE value="true">true</CIVIL_ENABLE>
     <ACHIEVE_ENABLE value="true">true</ACHIEVE_ENABLE>
-    <TRAINER_STANDALONE value="true">true</TRAINER_STANDALONE>
+    <TRAINER_STANDALONE value="false">false</TRAINER_STANDALONE>
     <AUTO_UNLOCK value="true">true</AUTO_UNLOCK>
 </config>

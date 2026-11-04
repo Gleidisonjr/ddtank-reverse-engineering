@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ServerList>
-    <Item agentId="1" 
+    <Item ID="1" 
+          agentId="1" 
           AreaName="DDTank Local" 
           zoneName="Canal 1 (Lobby)" 
           Name="Canal 1" 
+          IP="127.0.0.1" 
           Port="9200" 
           State="1" 
           MustLevel="0" 
