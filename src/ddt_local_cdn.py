@@ -80,8 +80,21 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
         return self.do_GET()
 
     def do_GET(self):
+        # Normalize double slashes and strip query parameters for routing
+        query = ''
+        if '?' in self.path:
+            raw_path, query = self.path.split('?', 1)
+            query = '?' + query
+        else:
+            raw_path = self.path
+
+        while '//' in raw_path:
+            raw_path = raw_path.replace('//', '/')
+
+        self.path = raw_path + query
+
         # Handle IP API endpoint
-        if self.path.startswith('/api/ip'):
+        if raw_path.startswith('/api/ip'):
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.end_headers()
@@ -95,23 +108,39 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
             return
 
         # Redirect root to player.html
-        if self.path in ('/', '/index.html'):
-            self.path = '/player.html'
+        if raw_path in ('/', '/index.html'):
+            self.path = '/player.html' + query
+            raw_path = '/player.html'
 
         # Route LoginSelectList
-        if 'loginselectlist' in self.path.lower():
-            self.path = '/request/LoginSelectList.ashx'
+        if 'loginselectlist' in raw_path.lower():
+            self.path = '/request/LoginSelectList.ashx' + query
+            raw_path = '/request/LoginSelectList.ashx'
 
         # Route CreateLogin
-        if 'createlogin' in self.path.lower():
-            self.path = '/request/CreateLogin.ashx'
+        if 'createlogin' in raw_path.lower():
+            self.path = '/request/CreateLogin.ashx' + query
+            raw_path = '/request/CreateLogin.ashx'
 
         # Fallback for /LoadServerList.ashx or ServerList.ashx
-        if 'serverlist' in self.path.lower():
-            self.path = '/request/ServerList.xml'
+        if 'serverlist' in raw_path.lower():
+            self.path = '/request/ServerList.xml' + query
+            raw_path = '/request/ServerList.xml'
 
-        # Strip query string for file existence check
-        clean_path = self.path.split('?')[0].split('#')[0]
+        # Route PickGliss UI package (xml.png)
+        if raw_path.endswith('xml.png') or 'xml.png' in raw_path:
+            xml_png_path = os.path.join(WWW_DIR, 'flash', 'ui', 'xml', 'xml.png')
+            if os.path.exists(xml_png_path):
+                self.send_response(200)
+                self.send_header('Content-Type', 'image/png')
+                with open(xml_png_path, 'rb') as f:
+                    content = f.read()
+                self.send_header('Content-Length', str(len(content)))
+                self.end_headers()
+                self.wfile.write(content)
+                return
+
+        clean_path = raw_path
         local_file = os.path.normpath(os.path.join(WWW_DIR, clean_path.lstrip('/')))
 
         # If file does not exist, but is an XML, ASHX or ASPX request, serve dynamic success XML
@@ -121,6 +150,17 @@ class DDTLocalHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             fallback_xml = b'<?xml version="1.0" encoding="utf-8" ?>\n<Result value="true" message="Success">\n</Result>\n'
             self.wfile.write(fallback_xml)
+            return
+
+        # If requested PNG does not exist in UI or flash, fallback to transparent 1x1 PNG
+        if not os.path.exists(local_file) and clean_path.endswith('.png'):
+            self.send_response(200)
+            self.send_header('Content-Type', 'image/png')
+            # 1x1 transparent PNG
+            empty_png = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00\x1f\x15c4\x00\x00\x00\nIDATx\x9cc\x00\x01\x00\x00\x05\x00\x01\r\n-\xb4\x00\x00\x00\x00IEND\xaeB`\x82'
+            self.send_header('Content-Length', str(len(empty_png)))
+            self.end_headers()
+            self.wfile.write(empty_png)
             return
 
         return super().do_GET()
