@@ -178,6 +178,18 @@ DDTank_Launcher.bat
 ```
 This automatically starts the Policy Server, Asset CDN, and Game Server, and launches the desktop Flash client.
 
+The local player starts with `www/flash/DDT_Loading.swf`, the normal login loader.
+Keep this file with the other Flash assets: the older `Loading.swf` can send the
+client into the first-login trainer, whose download ends at 70% before the game
+core is requested. The preconfigured Admin profile must retain `IsFirst="2"`
+in `www/request/LoginSelectList.ashx` to use normal login.
+The CDN encodes tables for this loader with zlib and XOR over the first 1024
+bytes. Localized requests such as `/request/portugal/TemplateAllList.xml` use
+the exported tables in `www/request/`. `MapServerList.xml` is a compressed map
+table with `ServerID` and `OpenMap` attributes; the channel list and the pet/totem
+tables consumed by `TextLoader` stay plain XML.
+Login dates must use `YYYY-MM-DDTHH:MM:SS`, as required by the Flash date parser.
+
 ### 2. Multiplayer with Friends (via Tailscale VPN)
 
 1. **Host Setup:**
@@ -226,6 +238,9 @@ python src/ddt_combat_engine.py
 
 # 3. Multi-client lobby & GM command integration test:
 python tests/test_lobby_smoke.py
+
+# 4. Local startup assets, HTTP responses, and Flash table decoding:
+python -m unittest discover -s tests -p "test_cdn_loading.py" -v
 ```
 
 ---

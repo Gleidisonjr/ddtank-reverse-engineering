@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Result value="true" message="Success">
     <Item Name="VIPLevelExp" Value="0,100,500,1500,3500,7000,12000,18000,25000,35000,50000,80000" />
+    <Item Name="VIPExpNeededForEachLv" Value="0|100|500|1500|3500|7000|12000|18000|25000|35000|50000|80000" />
     <Item Name="MaxLevel" Value="65" />
+    <Item Name="PlayerMinLevel" Value="1" />
     <Item Name="FightPowerRate" Value="1.0" />
     <Item Name="CanBuyProp" Value="true" />
     <Item Name="AutoOpenHole" Value="true" />
+    <Item Name="AllowChooseChannel" Value="true" />
+    <Item Name="LeagueAwardPoints" Value="1000|2000|5000|10000" />
+    <Item Name="MarryRoomCreateMoney" Value="1000,2000,3000" />
+    <Item Name="MissionRiches" Value="3000|5000|8000|10000|15000|20000|30000|40000|50000|60000" />
+    <Item Name="HotSpringExp" Value="100,200,300,400,500" />
+    <Item Name="WarriorFamRaidPricePerMin" Value="10" />
+    <Item Name="HelpGameSpringBegin" Value="2026-01-01 00:00:00" />
+    <Item Name="HelpGameBuffPrice" Value="100|100|100" />
+    <Item Name="HelpGameCleanCDPrice" Value="100|100" />
+    <Item Name="HallBGFile" Value="hall" />
+    <Item Name="CoreScaleBitmapFile" Value="corescalebitmap" />
+    <Item Name="PayCenterFile" Value="paycenter" />
+    <Item Name="TrainerFile" Value="trainer" />
+    <Item Name="RoomFile" Value="room" />
+    <Item Name="GameOverFile" Value="gameover" />
 </Result>

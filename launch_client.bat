@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 title DDTank Clássico - Cliente de Jogo
 cd /d "%~dp0"
 set RUNTIME=runtime\DDClassico.Runtime.exe
@@ -10,9 +11,9 @@ if not exist "%RUNTIME%" (
 )
 
 if not exist "%RUNTIME%" (
-    echo [*] Executavel local nao encontrado. Abrindo URL local no navegador...
-    start http://127.0.0.1:8080/player.html
-    exit /b 0
+    echo [-] Executavel local nao encontrado em runtime\DDClassico.Runtime.exe
+    pause
+    exit /b 1
 )
 
-start "" "%RUNTIME%" --ppapi-flash-path="%~dp0%FLASH%" --ppapi-flash-version=32.0.0.371 "http://127.0.0.1:8080/player.html"
+start "" "%~dp0%RUNTIME%" --ppapi-flash-path="%~dp0%FLASH%" --ppapi-flash-version=32.0.0.371 "http://127.0.0.1:8080/player.html"

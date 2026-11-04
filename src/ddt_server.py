@@ -125,8 +125,25 @@ class DDTClientSession:
         print(f"[+] Client connected from {self.addr[0]}:{self.addr[1]}")
         self.server.register_session(self)
         try:
-            # Client connected with game packet: send RSAKEY (Opcode 7) immediately
+            # Brief peek for inline Flash Socket Policy (<policy-file-request/>) before sending binary RSAKEY
+            first_data = None
+            try:
+                first_data = await asyncio.wait_for(self.reader.read(4096), timeout=0.15)
+                if not first_data:
+                    return
+                if b'<policy-file-request/>' in first_data or b'policy' in first_data.lower():
+                    print(f"[+] Served inline Flash socket policy to {self.addr[0]}")
+                    self.writer.write(POLICY_XML)
+                    await self.writer.drain()
+                    return
+            except asyncio.TimeoutError:
+                first_data = None
+
+            # Game socket connection: send RSAKEY (Opcode 7) immediately
             await self.send_rsakey()
+
+            if first_data:
+                await self.handle_raw_data(first_data)
 
             # Main read loop
             while self.running:
@@ -670,15 +687,56 @@ class DDTSocketServer:
 
     async def start(self):
         init_database()
-        self.server = await asyncio.start_server(
-            lambda r, w: DDTClientSession(r, w, self).run(),
-            self.host, self.port
-        )
+        self._release_stale_python_listener()
+        try:
+            self.server = await asyncio.start_server(
+                lambda r, w: DDTClientSession(r, w, self).run(),
+                self.host, self.port
+            )
+        except OSError as e:
+            print(f"[-] Porta TCP {self.port} ocupada ({e}). Verifique se outro serviço está usando a porta {self.port}.")
+            raise
         print("==================================================================")
         print(f"       DDTank Game Core Socket Server Listening on {self.port}       ")
         print("==================================================================")
         async with self.server:
             await self.server.serve_forever()
+
+    def _release_stale_python_listener(self):
+        if sys.platform != 'win32':
+            return
+        import subprocess, time
+        my_pid = os.getpid()
+        try:
+            out = subprocess.check_output(['netstat', '-ano', '-p', 'tcp'], stderr=subprocess.DEVNULL).decode('latin1', errors='ignore')
+        except Exception:
+            return
+        pids = set()
+        for line in out.splitlines():
+            parts = line.split()
+            if len(parts) >= 5 and parts[0].upper() == 'TCP':
+                if parts[1].endswith(f':{self.port}') and parts[2].endswith(':0'):
+                    try:
+                        pid = int(parts[-1])
+                        if pid > 4 and pid != my_pid:
+                            pids.add(pid)
+                    except ValueError:
+                        pass
+        for pid in pids:
+            try:
+                cmd_out = subprocess.check_output(
+                    [
+                        'powershell', '-NoProfile', '-Command',
+                        f"(Get-CimInstance Win32_Process -Filter 'ProcessId={pid}').CommandLine"
+                    ],
+                    stderr=subprocess.DEVNULL
+                ).decode('utf-8', errors='ignore').strip().lower()
+                if 'ddt_' in cmd_out:
+                    print(f"[*] Encerrando instância anterior do ddt_server (PID {pid}) na porta {self.port}...")
+                    subprocess.run(['taskkill', '/F', '/PID', str(pid)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                    time.sleep(0.4)
+            except Exception:
+                pass
 
 
 if __name__ == '__main__':

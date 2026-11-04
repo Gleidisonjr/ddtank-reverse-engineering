@@ -23,7 +23,7 @@ TEST_PORT = 9205
 def main():
     print(f"[*] Starting DDTank Server on test port {TEST_PORT}...")
     server_proc = subprocess.Popen(
-        [sys.executable, os.path.join(BASE_DIR, 'scripts', 'ddt_server.py'), str(TEST_PORT)],
+        [sys.executable, os.path.join(BASE_DIR, 'src', 'ddt_server.py'), str(TEST_PORT)],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )

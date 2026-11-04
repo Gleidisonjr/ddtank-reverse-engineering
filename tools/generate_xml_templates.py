@@ -106,9 +106,12 @@ def generate_templates():
         {"TemplateID": 11020, "Name": "Símbolo dos Deuses", "CategoryID": 11, "NeedSex": 0, "Quality": 4, "MaxCount": 999, "Pic": "prop/symbol", "Description": "Protege seu equipamento contra perda de nível em caso de falha."},
         {"TemplateID": 11101, "Name": "Megafone Pequeno", "CategoryID": 11, "NeedSex": 0, "Quality": 2, "MaxCount": 999, "Pic": "prop/sbugle", "Description": "Transmite mensagem para todo o canal atual."},
         {"TemplateID": 11102, "Name": "Megafone Grande", "CategoryID": 11, "NeedSex": 0, "Quality": 3, "MaxCount": 999, "Pic": "prop/bbugle", "Description": "Transmite mensagem destacada para todos os canais e servidores."},
+
+        # FirstRechargeManager reads this currency's Name during startup.
+        {"TemplateID": -4300, "Name": "Grãos dourados", "CategoryID": 11, "NeedSex": 0, "Quality": 1, "MaxCount": 999999, "Pic": "", "CanEquip": False, "CanUse": False, "Description": "Moeda da loja de primeira recarga."},
     ]
 
-    lines = ['<?xml version="1.0" encoding="utf-8" ?>', '<Result value="true" message="Success">']
+    lines = ['<?xml version="1.0" encoding="utf-8" ?>', '<Result value="true" message="Success">', '    <ItemTemplate>']
     for it in items:
         attrs = [
             f'TemplateID="{it["TemplateID"]}"',
@@ -126,8 +129,8 @@ def generate_templates():
             f'Description="{it.get("Description", "")}"',
             f'CanDrop="false"',
             f'CanDelete="false"',
-            f'CanEquip="true"',
-            f'CanUse="true"',
+            f'CanEquip="{str(it.get("CanEquip", True)).lower()}"',
+            f'CanUse="{str(it.get("CanUse", True)).lower()}"',
             f'CanStrengthen="true"',
             f'CanCompose="true"',
             f'Hole="1,1,1,1,1,1"',
@@ -142,7 +145,8 @@ def generate_templates():
             f'Property7="0"',
             f'Property8="0"'
         ]
-        lines.append(f'    <ItemTemplate {" ".join(attrs)} />')
+        lines.append(f'        <Item {" ".join(attrs)} />')
+    lines.append('    </ItemTemplate>')
     lines.append('</Result>')
     write_xml("TemplateAllList.xml", "\n".join(lines))
 
@@ -176,16 +180,11 @@ def generate_server_config():
     write_xml("ServerConfig.xml", xml)
 
 def generate_maps():
-    maps = [
-        {"ID": 1, "Name": "Vila das Fadas", "Type": 1, "Description": "Mapa clássico verdejante", "Pic": "map/1"},
-        {"ID": 2, "Name": "Castelo Antigo", "Type": 1, "Description": "Ruínas medievais", "Pic": "map/2"},
-        {"ID": 3, "Name": "Laboratório Secreto", "Type": 1, "Description": "Complexo subterrâneo de alta tecnologia", "Pic": "map/3"},
-        {"ID": 4, "Name": "Deserto dos Ventos", "Type": 1, "Description": "Dunas escaldantes sob fortes correntes de ar", "Pic": "map/4"},
-    ]
+    # WeekOpenMapAnalyze expects one server and a comma-separated map list,
+    # rather than individual map descriptions (which belong in LoadMapsItems).
+    map_ids = (1, 2, 3, 4)
     lines = ['<?xml version="1.0" encoding="utf-8" ?>', '<Result value="true" message="Success">']
-    for m in maps:
-        attrs = [f'{k}="{v}"' for k, v in m.items()]
-        lines.append(f'    <Item {" ".join(attrs)} />')
+    lines.append(f'    <Item ServerID="1" OpenMap="{",".join(str(map_id) for map_id in map_ids)}" />')
     lines.append('</Result>')
     write_xml("MapServerList.xml", "\n".join(lines))
 
